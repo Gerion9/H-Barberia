@@ -1,0 +1,12 @@
+[build]
+  publish = "dist"
+  command = "npm install --legacy-peer-deps && npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configuración para manejar redirects de SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
