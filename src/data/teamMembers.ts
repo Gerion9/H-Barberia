@@ -26,13 +26,5 @@ export const teamMembers: BarberProfile[] = [
     imageUrl: "/Miguel-Angel.png", // Asumiendo /public
     description: "Especializado en tendencias modernas y técnicas clásicas, Miguel Ángel aporta creatividad y habilidad a cada cliente.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LGWBMpVHd_HfnfcHi7Hq_JcVpO3RQxHwehHDx2wpvGFX8XD-Pi3GveLUFw6mYLaLnQ5vlKV66?gv=true"
-  },
-  {
-    id: "christian",
-    name: "Christian Arenas",
-    title: "Barbero Profesional",
-    imageUrl: "/Christian.jpg", // Asumiendo /public
-    description: "Experto en cortes modernos y fade impecable, Christian se dedica a entender tu estilo para crear looks personalizados y a la vanguardia.",
-    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3rFvp0vwdHOLfaqq23fxBysd7j9uFNsijsMOvfW1ZS6QBV-Njt4fzM0cfHKTJwIitds8uAuSHR?gv=true"
   }
 ]; 

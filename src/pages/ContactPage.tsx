@@ -51,13 +51,7 @@ const ContactPage: React.FC = () => {
                     </a> 
                     ({contactInfo.barberia.name.split('(')[1].replace(')', '')})
                   </div>
-                  <div>
-                    Christian: 
-                    <IconWhatsApp />
-                    <a href={`https://wa.me/${contactInfo.christian.phone.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">
-                      {contactInfo.christian.phone}
-                    </a> 
-                  </div>
+
                   <div>
                     Miguel: 
                     <IconWhatsApp />
