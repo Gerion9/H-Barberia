@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Color de fondo general (opcional, si no es blanco) */
+  /* background-color: #f8f9fa; */ 
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Asegura que el footer quede abajo */
+}
+
+/* Estilos para contenedores de contenido *dentro* de las páginas */
+.page-content-container {
+  max-width: 1100px; /* Ancho máximo para el contenido normal */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1.5rem; /* Padding para el contenido */
+  flex-grow: 1; /* Ayuda si el contenido es corto */
+  width: 100%; /* Asegura que ocupe espacio */
+  box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+/* Puedes añadir más estilos globales aquí */
+
+/* Estilos para la sección CTA genérica */
+.cta-section {
+  text-align: center; 
+  margin-top: 3rem; 
+  padding: 2.5rem 1rem; 
+  background-color: #f8f8f8; /* Fondo sutil diferente */
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; 
+}
+
+.cta-section h2 {
+  font-size: 1.8rem;
+  color: #2c1e13;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para el botón dentro de la sección CTA */
+/* Asegúrate que .book-button esté definido globalmente o importa aquí */
+.cta-section .book-button {
+  /* Ajustes adicionales si son necesarios, por ejemplo, tamaño */
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Responsividad para la sección CTA */
+@media (max-width: 768px) {
+  .cta-section {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .cta-section .book-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+}

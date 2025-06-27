@@ -1,0 +1,263 @@
+.booking-page {
+  /* Controlado por page-content-container */
+}
+
+.booking-page h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #2c1e13;
+}
+
+.booking-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-placeholder {
+  border: 2px dashed #e0e0e0;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.booking-placeholder h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.booking-placeholder p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.booking-placeholder a {
+  color: #b38b00;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.booking-placeholder a:hover {
+  text-decoration: underline;
+}
+
+/* --- Estilos para el Selector de Barbero --- */
+
+.barber-selector-container {
+  margin-bottom: 2.5rem;
+  text-align: center; /* Centra el label y el contenedor de botones */
+}
+
+.selector-label {
+  display: block; /* Asegura que ocupe su propia línea */
+  font-size: 1.2rem;
+  color: #333; /* Un gris un poco más oscuro */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.barber-buttons {
+  display: flex; /* Usa flexbox para alinear botones */
+  justify-content: center; /* Centra los botones horizontalmente */
+  flex-wrap: wrap; /* Permite que los botones pasen a la línea siguiente si no caben */
+  gap: 1rem; /* Espacio entre botones */
+}
+
+.barber-select-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c1e13; /* Color principal oscuro */
+  background-color: #f8f5f0; /* Un fondo beige muy claro */
+  border: 2px solid #e0dacd; /* Borde sutil a juego */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transición suave */
+  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+.barber-select-button:hover {
+  background-color: #e0dacd; /* Color de fondo al pasar el ratón */
+  border-color: #c9bfac; 
+  transform: translateY(-2px); /* Ligero efecto de elevación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.barber-select-button.selected {
+  background-color: #2c1e13; /* Fondo oscuro para el seleccionado */
+  color: #fff; /* Texto blanco para el seleccionado */
+  border-color: #2c1e13; /* Borde del mismo color */
+  box-shadow: 0 6px 12px rgba(44, 30, 19, 0.2); /* Sombra más pronunciada */
+  transform: translateY(-2px); 
+}
+
+/* --- Estilos para el Componente de Error de Calendario --- */
+
+.calendar-error-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-error {
+  background-color: #fff3cd;
+  border: 2px solid #ffeaa7;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.15);
+}
+
+.calendar-error h3 {
+  color: #856404;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.calendar-error p {
+  color: #856404;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.error-actions {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #ffeaa7;
+}
+
+.error-actions p {
+  color: #495057;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.error-actions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.error-actions li {
+  padding: 0.5rem 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.error-actions a {
+  color: #2c1e13;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.error-actions a:hover {
+  color: #b38b00;
+  text-decoration: underline;
+}
+
+/* --- Estilos para el Contenedor del Calendario --- */
+
+.google-calendar-embed-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.google-calendar-embed-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c1e13;
+  font-size: 1.6rem;
+}
+
+.select-prompt-container {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.select-prompt {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+  .booking-page h1 {
+    font-size: 1.8rem;
+  }
+  .booking-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .booking-placeholder {
+    padding: 2rem 1rem; /* Menos padding en móvil */
+  }
+  .booking-placeholder h2 {
+    font-size: 1.3rem;
+  }
+  
+  .calendar-error {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .calendar-error h3 {
+    font-size: 1.2rem;
+  }
+  
+  .error-actions {
+    padding: 1rem;
+  }
+  
+  .google-calendar-embed-container h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Ajustes responsivos adicionales si son necesarios */
+@media (max-width: 480px) {
+  .barber-buttons {
+    gap: 0.5rem; /* Menos espacio en móviles muy pequeños */
+    flex-direction: column; /* Apilar botones verticalmente */
+    align-items: center; /* Centrar botones apilados */
+  }
+  .barber-select-button {
+    width: 80%; /* Hacer que los botones ocupen más ancho */
+    text-align: center;
+    padding: 0.9rem 1rem;
+  }
+  
+  .calendar-error {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .error-actions li {
+    font-size: 0.9rem;
+  }
+   
+  .google-calendar-embed-container h2 {
+    font-size: 1.4rem;
+  }
+} 

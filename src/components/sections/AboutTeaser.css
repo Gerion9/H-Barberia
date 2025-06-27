@@ -1,0 +1,109 @@
+.about-teaser-section {
+  /* padding: 3rem 0; Eliminamos padding */
+  background-color: #fafafa;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Contenedor para centrar el contenido */
+.section-content-wrapper {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-teaser-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  /* Ya no necesita max-width ni margin auto aquí */
+}
+
+.about-teaser-text {
+  flex: 1;
+  min-width: 280px;
+  padding-right: 1rem;
+}
+
+.about-teaser-image {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-teaser-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder si no hay imagen real */
+.image-placeholder {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+.image-placeholder::after {
+    content: 'Imagen Perfil';
+    font-size: 0.9rem;
+}
+
+
+/* Estilo alternativo para títulos de sección (sin línea abajo) */
+.section-title-alt {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c1e13;
+  font-weight: 600;
+}
+
+.about-teaser-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Reutilizamos el botón outline de ServicesHighlight, 
+   pero podemos sobreescribir si es necesario */
+.about-teaser-text .cta-button-outline {
+  margin-top: 0.5rem;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .about-teaser-section {
+    padding-top: 2rem; /* Menos padding vertical en móvil */
+    padding-bottom: 2rem;
+  }
+  .about-teaser-content {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+  .about-teaser-text {
+    padding-right: 0;
+    text-align: center;
+  }
+  .section-title-alt {
+     font-size: 1.6rem;
+  }
+  .about-teaser-image {
+    /* Quizás reducir el max-width del placeholder/imagen en móvil */
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} 

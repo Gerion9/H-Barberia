@@ -1,0 +1,130 @@
+.services-highlight-section {
+  /* padding: 3rem 0; Eliminamos padding de la sección */
+  background-color: #ffffff; /* Mantenemos fondo blanco */
+  padding-top: 3rem; /* Espacio arriba */
+  padding-bottom: 3rem; /* Espacio abajo */
+}
+
+/* Contenedor para centrar el contenido de esta sección */
+.section-content-wrapper {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* Padding lateral */
+  padding-right: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #2c1e13; /* Marrón oscuro */
+  position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #b38b00; /* Dorado */
+  margin: 0.5rem auto 0;
+}
+
+.highlight-container {
+  display: grid;
+  /* Ajustamos minmax para mejor comportamiento en móvil */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap: 1.5rem; /* Reducimos gap un poco */
+  margin-bottom: 2.5rem;
+}
+
+.highlight-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.8rem;
+  text-align: center;
+  background-color: #fdfdfd; /* Un blanco ligeramente distinto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.highlight-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.highlight-link {
+  color: #b38b00; /* Dorado */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.highlight-link:hover {
+  color: #8a6d00; /* Dorado más oscuro */
+  text-decoration: underline;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Estilo para un botón con borde, diferente al principal */
+.cta-button-outline {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: transparent;
+  color: #b38b00; /* Dorado */
+  border: 2px solid #b38b00; /* Borde Dorado */
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button-outline:hover {
+  background-color: #b38b00; /* Dorado */
+  color: white;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .services-highlight-section {
+     padding-top: 2rem;
+     padding-bottom: 2rem;
+  }
+  .section-title {
+     font-size: 1.7rem; /* Reducir tamaño de título en móvil */
+     margin-bottom: 2rem;
+  }
+  .highlight-container {
+    gap: 1rem; /* Menos gap en móvil */
+  }
+  .highlight-card {
+    padding: 1.5rem; /* Menos padding en tarjeta móvil */
+  }
+  .cta-button-outline {
+    padding: 0.7rem 1.5rem; /* Botón ligeramente más pequeño */
+    font-size: 0.9rem;
+  }
+} 

@@ -1,0 +1,48 @@
+.booking-teaser-section {
+  background-color: #e8e2d9; /* Un color crema/grisáceo diferente */
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+  text-align: center;
+}
+
+/* Reutilizamos .section-content-wrapper para centrar */
+.booking-teaser-section .section-content-wrapper {
+   /* Hereda max-width, margin, etc. de la definición global si existe,
+      o podemos definirla aquí si es necesario */
+   max-width: 800px; /* Limitar ancho del texto */
+   margin: 0 auto;
+   padding: 0 1.5rem;
+}
+
+.booking-teaser-section h2 {
+  font-size: 1.9rem;
+  color: #2c1e13;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.booking-teaser-section p {
+  color: #5a4d41;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Reutilizamos el botón .cta-button del Header */
+.booking-teaser-section .cta-button {
+  /* Podemos añadir estilos específicos si es necesario */
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+  .booking-teaser-section {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  .booking-teaser-section h2 {
+    font-size: 1.6rem;
+  }
+  .booking-teaser-section p {
+    font-size: 1rem;
+  }
+} 

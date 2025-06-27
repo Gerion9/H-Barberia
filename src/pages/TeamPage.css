@@ -1,0 +1,140 @@
+.team-page {
+  /* No necesita max-width aquí, lo controla page-content-container */
+}
+
+.team-page h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem; /* Menos espacio antes de la intro */
+  color: #2c1e13;
+}
+
+.team-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px; /* Limitar ancho de la intro */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reducir minmax */
+  gap: 2rem; /* Ajustar gap */
+}
+
+.barber-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Para que la imagen no se salga si no es perfecta */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.barber-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.barber-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Imagen cuadrada */
+  overflow: hidden;
+}
+
+.barber-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  display: block;
+}
+
+.barber-info {
+  padding: 1.5rem;
+  flex-grow: 1; /* Para que ocupe espacio si las descripciones varían */
+}
+
+.barber-info h2 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.barber-info h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b38b00; /* Dorado para el título */
+}
+
+.barber-info p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+   .team-page h1 {
+     font-size: 1.8rem;
+   }
+   .team-intro {
+     font-size: 1rem;
+     margin-bottom: 2rem;
+   }
+   .team-grid {
+     gap: 1.5rem;
+   }
+   .barber-info {
+      padding: 1.2rem;
+   }
+   .barber-info h2 {
+      font-size: 1.3rem;
+   }
+   .barber-info h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+   }
+}
+
+/* --- Estilos para el Botón de Reservar en Tarjeta de Equipo --- */
+
+/* Estilo base reutilizable para botones de acción/reserva */
+.book-button {
+  display: inline-block; /* Para que respete padding/margin */
+  padding: 0.7rem 1.5rem;
+  margin-top: 1.5rem; /* Espacio sobre el botón */
+  font-size: 0.95rem;
+  font-weight: 600; /* Más peso */
+  color: #ffffff;
+  background-color: #b38b00; /* Usar el dorado como fondo */
+  border: none;
+  border-radius: 20px; /* Botón tipo píldora */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-button:hover, 
+.book-button:focus {
+  background-color: #9e7a00; /* Un dorado un poco más oscuro al pasar el ratón */
+  color: #ffffff; /* Asegurar texto blanco */
+  text-decoration: none;
+  transform: translateY(-2px); /* Elevar ligeramente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajustes específicos si son necesarios para el botón en TeamPage */
+.team-book-button {
+  width: 100%; /* Ocupar todo el ancho disponible en la tarjeta */
+  box-sizing: border-box; /* Para que el padding no aumente el ancho total */
+} 

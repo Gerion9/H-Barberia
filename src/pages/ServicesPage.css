@@ -1,0 +1,140 @@
+.services-page {
+  /* max-width y margin ahora controlados por page-content-container */
+  /* padding: 0 1rem; <- Controlado por page-content-container */
+}
+
+.services-page h1 {
+  text-align: center;
+  font-size: 2.2rem; /* Podríamos ajustar el tamaño también */
+  margin-bottom: 1rem; /* Ajustar margen inferior */
+  color: #2c1e13; /* Marrón oscuro, como otros títulos */
+}
+
+.services-intro {
+  text-align: center;
+  /* margin-bottom: 2.5rem; */
+  margin-bottom: 1.5rem; /* Reducir margen inferior para acercar el CTA */
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px; /* Ajustar max-width si es necesario */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para el CTA en la cabecera */
+.services-cta-header {
+  text-align: center;
+  margin-bottom: 3rem; /* Espacio antes de la lista de servicios */
+  padding: 1.5rem 1rem; /* Padding interno ligero */
+  background-color: #fdfbf5; /* Fondo beige muy sutil, opcional */
+  border-radius: 8px;
+  border: 1px solid #eee; /* Borde sutil, opcional */
+}
+
+.services-cta-header h2 {
+  font-size: 1.5rem; /* Tamaño adecuado para esta posición */
+  color: #2c1e13;
+  margin-top: 0;
+  margin-bottom: 1rem; /* Espacio antes del botón */
+  font-weight: 600;
+  border-bottom: none; /* Quitar borde inferior si lo hereda */
+  display: block; /* Asegurar que sea bloque */
+}
+
+.services-cta-header .book-button {
+  /* Usar el estilo base .book-button, pero podemos ajustar tamaño si es necesario */
+  padding: 0.8rem 2rem;
+  font-size: 1.05rem;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #b38b00; /* Línea dorada bajo el título */
+  padding-bottom: 0.5rem;
+  display: inline-block; /* Para que el borde no ocupe todo el ancho */
+}
+
+/* Estilo para la duración */
+.service-duration {
+  font-size: 0.9rem;
+  color: #777; /* Un gris un poco más claro */
+  margin-bottom: 0.75rem; /* Espacio antes del precio */
+  font-style: italic;
+}
+
+.service-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #b38b00; /* Dorado */
+  margin-bottom: 0.5rem;
+}
+
+.service-notes,
+.service-includes {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+  .services-page h1 {
+    font-size: 1.8rem; /* Reducir título */
+  }
+  .services-intro {
+    font-size: 1rem;
+    /* margin-bottom: 2rem; */
+    margin-bottom: 1.5rem;
+  }
+  .services-list {
+    gap: 1rem; /* Menos gap en móvil */
+  }
+  .service-card {
+    padding: 1.2rem; /* Menos padding en tarjeta móvil */
+  }
+  .service-card h2 {
+    font-size: 1.2rem;
+  }
+  .service-price {
+    font-size: 1.1rem;
+  }
+
+  .services-cta-header {
+    margin-bottom: 2rem;
+    padding: 1.2rem 1rem;
+  }
+  
+  .services-cta-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .services-cta-header .book-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+} 

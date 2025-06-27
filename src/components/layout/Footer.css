@@ -1,0 +1,24 @@
+.app-footer {
+  background-color: #f8f8f8; /* Un gris muy claro */
+  color: #555;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem; /* Espacio arriba del footer */
+  border-top: 1px solid #ddd;
+}
+
+.footer-content {
+  max-width: 1200px; /* O el ancho máximo de tu layout */
+  margin: 0 auto; /* Centrar contenido */
+  text-align: center;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #b38b00;
+} 

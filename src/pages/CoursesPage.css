@@ -1,0 +1,439 @@
+.courses-page {
+  /* Controlado por page-content-container */
+}
+
+.courses-page h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #2c1e13;
+}
+
+.courses-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.course-general-info {
+  background-color: #fdfbf5; /* Un beige muy claro */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border: 1px solid #eee;
+}
+
+.course-general-info h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c1e13;
+  font-size: 1.6rem;
+}
+
+.course-general-info p {
+  margin-bottom: 0.5rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.courses-page h2 { /* Estilo para el título "Nuestros Cursos" */
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #2c1e13;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  border-left: 5px solid #b38b00; /* Borde lateral dorado */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-level {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Colores específicos para niveles */
+.course-level-iniciación {
+  background-color: #5cb85c; /* Verde */
+}
+.course-level-avanzado {
+  background-color: #f0ad4e; /* Naranja */
+}
+.course-level-especialización {
+  background-color: #d9534f; /* Rojo */
+}
+
+.course-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.course-summary {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1; /* Empuja meta hacia abajo */
+  margin-bottom: 1rem;
+}
+
+.course-meta {
+  margin-top: auto; /* Empuja al final */
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 0.8rem;
+}
+
+.course-meta span {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Sección de Contacto */
+.course-contact-section {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: #f8f5f0;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.course-contact-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c1e13;
+  font-size: 1.6rem;
+}
+
+.course-contact-section p {
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.whatsapp-button {
+  display: inline-flex; /* Para alinear icono y texto */
+  align-items: center;
+  gap: 0.5rem; /* Espacio entre icono y texto */
+  background-color: #25D366; /* Color oficial WhatsApp */
+  border-color: #25D366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1DAE54; /* Color más oscuro al pasar */
+  border-color: #1DAE54;
+}
+
+.whatsapp-contact-person {
+  margin-top: 1rem !important; /* Añadir espacio arriba */
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Estilos para Detalles Principales */
+.course-main-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables */
+  gap: 1rem 1.5rem; /* Espacio vertical y horizontal */
+  background-color: #fdfbf5; 
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border: 1px solid #eee;
+}
+
+.course-main-details div {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.course-main-details div strong {
+  color: #2c1e13;
+}
+
+.course-main-details small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Estilos para Temario */
+.course-features-list {
+  list-style: none; /* Quitar viñetas por defecto */
+  padding-left: 0;
+  margin-bottom: 3rem;
+  column-count: 2; /* Mostrar en 2 columnas en pantallas anchas */
+  column-gap: 2rem;
+}
+
+.course-features-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.8rem; /* Espacio para el icono */
+  position: relative;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.course-features-list li::before {
+  content: '\2714'; /* Icono de check (✓) */
+  position: absolute;
+  left: 0;
+  top: 0.1em; /* Ajuste vertical */
+  color: #b38b00; /* Color dorado */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .courses-page h1 { font-size: 1.8rem; }
+  .courses-intro { font-size: 1rem; }
+  .course-general-info h2 { font-size: 1.4rem; }
+  .courses-page h2 { font-size: 1.6rem; }
+  .courses-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .course-card { padding: 1.5rem; }
+  .course-card h3 { font-size: 1.2rem; }
+  .course-contact-section h2 { font-size: 1.4rem; }
+  .course-main-details {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    padding: 1.5rem;
+  }
+  .course-features-list {
+    column-count: 1; /* Una columna en móvil */
+  }
+  .course-features-list li {
+    font-size: 0.95rem;
+  }
+} 
+
+/* --- Estilos para Detalles Principales Mejorados --- */
+.course-main-details.enhanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 1.8rem 2rem; 
+  background-color: #ffffff; /* Fondo blanco para resaltar */
+  padding: 2rem 2.5rem; /* Más padding */
+  border-radius: 10px; /* Bordes más redondeados */
+  margin-bottom: 3.5rem;
+  border: 1px solid #eaeaea; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.detail-item {
+  display: flex; 
+  align-items: flex-start; 
+  gap: 1rem; 
+  font-size: 1rem;
+  color: #333;
+}
+
+.detail-icon { 
+  flex-shrink: 0; 
+  width: 24px; 
+  height: 24px;
+  color: #b38b00; 
+  margin-top: 0.1em; 
+}
+
+.detail-item strong {
+  color: #2c1e13; 
+  display: block; 
+  margin-bottom: 0.2rem;
+}
+
+.detail-item small {
+  font-size: 0.9rem;
+  color: #666;
+  display: block; 
+  line-height: 1.4;
+}
+.detail-item em { 
+    font-style: normal;
+    color: #555;
+}
+
+.course-level-detail {
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+
+/* --- Estilos para Temario (¿Qué Aprenderás?) --- */
+.courses-page h2 { /* Título "¿Qué Aprenderás?" y otros H2 */
+  text-align: left; /* Alinear a la izquierda */
+  font-size: 1.8rem;
+  margin-top: 3.5rem; /* Más espacio arriba */
+  margin-bottom: 1.8rem; /* Más espacio abajo */
+  color: #2c1e13;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #b38b00; /* Línea dorada */
+  display: inline-block; /* Para que el borde no ocupe todo el ancho */
+}
+
+.course-features-list {
+  list-style: none; 
+  padding-left: 0;
+  margin-bottom: 3.5rem;
+  column-count: 2; 
+  column-gap: 2.5rem; 
+}
+
+.course-features-list li {
+  margin-bottom: 1rem; 
+  padding-left: 2rem; 
+  position: relative;
+  color: #333;
+  font-size: 1.05rem; 
+  line-height: 1.6; 
+}
+
+.course-features-list li::before {
+  content: '\2714'; 
+  position: absolute;
+  left: 0;
+  top: 0.15em; 
+  color: #b38b00; 
+  font-weight: bold;
+  font-size: 1.2em; 
+}
+
+/* Eliminar/Comentar grid y estilos de tarjeta si ya no se usan */
+/* 
+.courses-grid { ... } 
+.course-card { ... }
+.course-level { ... } // Estilo base, colores se mantienen
+.course-card h3 { ... } 
+.course-summary { ... } 
+.course-meta { ... }
+*/
+
+
+/* --- Estilos para Sección de Contacto (Ajustes) --- */
+.course-contact-section {
+  text-align: center;
+  padding: 3rem 1.5rem; /* Más padding vertical */
+  background-color: #f8f5f0;
+  border-radius: 10px; /* Coherente con detalles */
+  margin-top: 3rem;
+}
+
+.course-contact-section h2 { /* Sobrescribir estilo general de H2 si es necesario */
+  text-align: center; /* Centrar este H2 */
+  border-bottom: none; /* Quitar borde */
+  display: block; /* Asegurar bloque */
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.course-contact-section p {
+  color: #555;
+  max-width: 550px; /* Ligeramente más ancho */
+  margin: 0 auto 1.8rem auto; /* Más margen inferior */
+  line-height: 1.7;
+}
+
+.whatsapp-button {
+ /* ... estilos existentes ... */
+ padding: 0.9rem 2rem; /* Botón ligeramente más grande */
+ font-size: 1.1rem;
+}
+
+.whatsapp-contact-person {
+  margin-top: 1.2rem !important;
+  font-size: 0.95rem;
+}
+
+
+/* --- Ajustes Responsivos Mejorados --- */
+@media (max-width: 992px) { /* Punto de ruptura para tablets */
+  .course-features-list {
+    column-count: 1; /* 1 columna en tablet */
+  }
+   .course-main-details.enhanced {
+     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+     gap: 1.5rem;
+     padding: 1.8rem;
+   }
+}
+
+@media (max-width: 768px) {
+  /* ... otros ajustes heredados ... */
+
+  .course-main-details.enhanced {
+    grid-template-columns: 1fr; /* Asegurar 1 columna */
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+  .detail-item {
+     font-size: 0.95rem;
+     gap: 0.8rem;
+  }
+  .detail-icon {
+     width: 20px;
+     height: 20px;
+  }
+
+  .courses-page h2 { /* "¿Qué Aprenderás?" */
+    font-size: 1.6rem; 
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .course-features-list {
+    column-count: 1; 
+    margin-bottom: 2.5rem;
+  }
+  .course-features-list li {
+    font-size: 1rem;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+   .course-features-list li::before {
+     font-size: 1.1em;
+   }
+
+  .course-contact-section {
+     padding: 2rem 1rem;
+     margin-top: 2rem;
+  }
+  .course-contact-section h2 { 
+     font-size: 1.5rem; 
+  }
+  .whatsapp-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+} 

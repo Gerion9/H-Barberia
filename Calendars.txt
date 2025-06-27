@@ -1,0 +1,61 @@
+Christian_Arenas
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+
+
+
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3rFvp0vwdHOLfaqq23fxBysd7j9uFNsijsMOvfW1ZS6QBV-Njt4fzM0cfHKTJwIitds8uAuSHR?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
+
+
+Rojas Angel:
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LGWBMpVHd_HfnfcHi7Hq_JcVpO3RQxHwehHDx2wpvGFX8XD-Pi3GveLUFw6mYLaLnQ5vlKV66?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LGWBMpVHd_HfnfcHi7Hq_JcVpO3RQxHwehHDx2wpvGFX8XD-Pi3GveLUFw6mYLaLnQ5vlKV66?gv=true',
+      color: '#039BE5',
+      label: 'Programar una cita',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+
+
+Alberto Cobian:
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true',
+      color: '#039BE5',
+      label: 'Programar una cita',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
