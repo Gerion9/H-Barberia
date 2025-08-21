@@ -17,7 +17,7 @@ export const teamMembers: BarberProfile[] = [
     title: "Maestro Barbero & Fundador",
     imageUrl: "/Cobian.png", // Asumiendo /public
     description: "Con amplia experiencia y una visión artística, Alberto lidera H Barbería y guía a futuros talentos impartiendo nuestros cursos de barbería.",
-    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIDb2NzpVU9PUxW5kWg1?gv=true"
+    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true"
   },
   {
     id: "miguel",
