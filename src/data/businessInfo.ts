@@ -7,6 +7,10 @@ export const contactInfo = {
     name: "H Barberia (Alberto Cobian)",
     phone: "+52 1 312 231 6946",
   },
+  alejandra: {
+    name: "Alejandra Cárdenas",
+    instagram: "https://www.instagram.com/alessita.mua",
+  },
   email: "hbarberiaac@gmail.com",
 };
 
@@ -29,4 +33,4 @@ export const address = {
   state: "Col.",
   fullAddress: "C. Gabino Barreda 135, Centro, 28000 Colima, Col.",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=C.+Gabino+Barreda+135%2C+Centro%2C+28000+Colima%2C+Col.", // Example URL
-}; 
+};

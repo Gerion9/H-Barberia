@@ -1,22 +1,118 @@
 .gallery-page {
-  /* Controlado por page-content-container */
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .gallery-page h1 {
   text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  color: #2c1e13;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .gallery-intro {
   text-align: center;
-  margin-bottom: 1.5rem;
+  color: #666;
   font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
+  margin-bottom: 2rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Estilos para las pestañas de categorías */
+.gallery-categories {
+  margin: 2rem 0;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.category-tab {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #495057;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.category-tab:hover {
+  background: #e9ecef;
+  border-color: #d4a574;
+  transform: translateY(-2px);
+}
+
+.category-tab.active {
+  background: linear-gradient(135deg, #d4a574, #c8956d);
+  border-color: #d4a574;
+  color: white;
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+/* Información de la categoría */
+.category-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border-left: 4px solid #d4a574;
+}
+
+.category-info h2 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.category-info p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.drive-link {
+  margin-top: 1rem;
+}
+
+.drive-link p {
+  margin-bottom: 0.5rem;
+}
+
+.drive-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.drive-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.drive-link small {
+  color: #888;
+  font-style: italic;
 }
 
 /* Estilos para el CTA en la cabecera */
@@ -54,32 +150,82 @@
 
 .gallery-grid {
   display: grid;
-  /* Ajustamos minmax para más columnas en pantallas grandes 
-     y que no queden muy pequeñas en móvil */
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-  gap: 0.8rem; /* Reducimos gap */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .gallery-item {
-  overflow: hidden; /* Asegura que la imagen no se desborde */
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  aspect-ratio: 1 / 1; /* Mantiene las imágenes cuadradas */
-  position: relative; /* Para futuro overlay/lightbox */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
 }
 
 .gallery-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-    cursor: pointer; /* Indica que se puede hacer clic (para lightbox) */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cubre el espacio sin distorsión */
-  display: block;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay para las imágenes */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-icon {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mensaje cuando no hay imágenes */
+.no-images {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.no-images p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.no-images p:last-child {
+  color: #888;
+  font-size: 0.95rem;
 }
 
 /* Placeholder para futuro overlay */
@@ -106,30 +252,107 @@
 }
 */ 
 
-/* Media Query para móvil */
+/* Responsive para móviles */
 @media (max-width: 768px) {
+  .gallery-page {
+    padding: 1rem 0;
+  }
+
+  .gallery-page h1 {
+    font-size: 2rem;
+  }
+
   .gallery-intro {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 
   .gallery-cta-header {
-    margin-bottom: 2rem;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
   }
-  
+
   .gallery-cta-header h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
   }
 
   .gallery-cta-header p {
     font-size: 0.95rem;
-    margin-bottom: 1rem;
   }
 
   .gallery-cta-header .book-button {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
-} 
+
+  /* Pestañas responsivas */
+  .category-tabs {
+    gap: 0.3rem;
+    padding: 0 1rem;
+  }
+
+  .category-tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  /* Información de categoría */
+  .category-info {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .category-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .drive-button {
+    display: block;
+    margin: 0.5rem auto 0;
+    text-align: center;
+    max-width: 200px;
+  }
+
+  /* Grid responsivo */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  .gallery-item img {
+    height: 250px;
+  }
+
+  .view-icon {
+    font-size: 1.5rem;
+  }
+
+  .no-images {
+    margin: 1rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-tab {
+    flex: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 220px;
+  }
+}

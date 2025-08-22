@@ -99,6 +99,13 @@
   margin-left: 0.25rem; /* Pequeño espacio a la izquierda */
 }
 
+.instagram-icon {
+  color: #E4405F; /* Color rosa de Instagram */
+  font-size: 1.2em; /* Tamaño del icono */
+  vertical-align: middle; /* Alinear verticalmente con el texto */
+  margin-left: 0.25rem; /* Pequeño espacio a la izquierda */
+}
+
 /* Sobrescribir estilos de .cta-section solo para ContactPage */
 .contact-page .cta-section {
   background-color: transparent; /* Sin fondo */
@@ -128,4 +135,4 @@
   .contact-page .cta-section {
      margin-top: 3rem; /* Aumentar también en móvil */
   }
-} 
+}
