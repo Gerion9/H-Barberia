@@ -55,7 +55,7 @@ const albertoMiguelServices: Service[] = [
 const alejandraServices: Service[] = [
   {
     name: "Diseño de Trenzas",
-    price: 800,
+    price: 300,
     duration: "180 minutos aprox",
     description: "Creaciones únicas y elegantes que realzan tu belleza natural",
     priceNotes: "Precio base. Puede variar según complejidad del diseño y largo del cabello."
