@@ -21,60 +21,140 @@
   margin-right: auto;
 }
 
-/* Estilos para el CTA en la cabecera */
-.services-cta-header {
-  text-align: center;
-  margin-bottom: 3rem; /* Espacio antes de la lista de servicios */
-  padding: 1.5rem 1rem; /* Padding interno ligero */
-  background-color: #fdfbf5; /* Fondo beige muy sutil, opcional */
-  border-radius: 8px;
-  border: 1px solid #eee; /* Borde sutil, opcional */
-}
-
-.services-cta-header h2 {
-  font-size: 1.5rem; /* Tamaño adecuado para esta posición */
-  color: #2c1e13;
-  margin-top: 0;
-  margin-bottom: 1rem; /* Espacio antes del botón */
-  font-weight: 600;
-  border-bottom: none; /* Quitar borde inferior si lo hereda */
-  display: block; /* Asegurar que sea bloque */
-}
-
-.services-cta-header .book-button {
-  /* Usar el estilo base .book-button, pero podemos ajustar tamaño si es necesario */
-  padding: 0.8rem 2rem;
-  font-size: 1.05rem;
-}
-
-.services-list {
+/* Estilos para servicios por especialista */
+.services-by-specialist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.specialist-column {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.specialist-header {
+  background-color: #2c1e13;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.specialist-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.specialist-title {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.specialist-services {
+  padding: 1rem;
+}
+
+/* Columna especial para Alejandra */
+.alejandra-column {
+  position: relative;
+}
+
+.alejandra-column .specialist-header {
+  background-color: #b38b00;
+}
+
+.alejandra-column::before {
+  content: "✨ Especialidad Única";
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: #b38b00;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 1;
 }
 
 .service-card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f0f0f0;
   border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.service-card h2 {
+.service-card h3 {
   margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c1e13;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Servicio destacado para Alejandra */
+.featured-service {
+  background-color: #fff9e6;
+  border: 2px solid #b38b00;
+  transform: scale(1.02);
+}
+
+.featured-service:hover {
+  transform: scale(1.04) translateY(-2px);
+}
+
+/* Botones de reserva para servicios */
+.service-book-button {
+  display: inline-block;
+  background-color: #2c1e13;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.service-book-button:hover {
+  background-color: #1a1209;
+  color: white;
+  text-decoration: none;
+}
+
+.featured-button {
+  background-color: #b38b00;
+  font-weight: 600;
+}
+
+.featured-button:hover {
+  background-color: #9a7600;
+}
+
+/* Estilo para la descripción */
+.service-description {
+  font-size: 0.95rem;
+  color: #555;
   margin-bottom: 0.75rem;
-  color: #333;
-  font-size: 1.4rem;
-  border-bottom: 2px solid #b38b00; /* Línea dorada bajo el título */
-  padding-bottom: 0.5rem;
-  display: inline-block; /* Para que el borde no ocupe todo el ancho */
+  line-height: 1.4;
+  font-style: italic;
 }
 
 /* Estilo para la duración */
@@ -103,38 +183,69 @@
 /* Media Query para móvil */
 @media (max-width: 768px) {
   .services-page h1 {
-    font-size: 1.8rem; /* Reducir título */
-  }
-  .services-intro {
-    font-size: 1rem;
-    /* margin-bottom: 2rem; */
-    margin-bottom: 1.5rem;
-  }
-  .services-list {
-    gap: 1rem; /* Menos gap en móvil */
-  }
-  .service-card {
-    padding: 1.2rem; /* Menos padding en tarjeta móvil */
-  }
-  .service-card h2 {
-    font-size: 1.2rem;
-  }
-  .service-price {
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 
-  .services-cta-header {
-    margin-bottom: 2rem;
-    padding: 1.2rem 1rem;
+  .services-intro {
+    font-size: 1rem;
   }
-  
-  .services-cta-header h2 {
-    font-size: 1.3rem;
+
+  .services-by-specialist {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .specialist-column {
+    margin-bottom: 1rem;
+  }
+
+  .specialist-header {
+    padding: 1.2rem;
+  }
+
+  .specialist-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .specialist-title {
+    font-size: 0.85rem;
+  }
+
+  .specialist-services {
+    padding: 0.8rem;
+  }
+
+  .service-card {
+    padding: 1rem;
     margin-bottom: 0.8rem;
   }
 
-  .services-cta-header .book-button {
-    padding: 0.7rem 1.5rem;
+  .service-card h3 {
     font-size: 1rem;
   }
-} 
+
+  .service-price {
+    font-size: 1rem;
+  }
+
+  .service-book-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .alejandra-column::before {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    top: -8px;
+    right: 8px;
+  }
+
+  .featured-service {
+    transform: scale(1.01);
+  }
+
+  .featured-service:hover {
+    transform: scale(1.02) translateY(-1px);
+  }
+}

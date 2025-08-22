@@ -26,5 +26,13 @@ export const teamMembers: BarberProfile[] = [
     imageUrl: "/Miguel-Angel.png", // Asumiendo /public
     description: "Especializado en tendencias modernas y técnicas clásicas, Miguel Ángel aporta creatividad y habilidad a cada cliente.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LGWBMpVHd_HfnfcHi7Hq_JcVpO3RQxHwehHDx2wpvGFX8XD-Pi3GveLUFw6mYLaLnQ5vlKV66?gv=true"
+  },
+  {
+    id: "alejandra",
+    name: "Alejandra Cárdenas",
+    title: "Especialista en Trenzas",
+    imageUrl: "/Alejandra.jpg",
+    description: "Experta en el arte del trenzado, Alejandra crea diseños únicos y elegantes que realzan la belleza natural de cada cliente.",
+    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1cf-Xbl_Z8Hev8CVTSN82C2sm50h1gWB_0HUFIugVz1wh3w4hpztHcrObsw0HJNtPe0dxVtdSk?gv=true"
   }
-]; 
+];
