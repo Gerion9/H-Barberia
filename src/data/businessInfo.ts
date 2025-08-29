@@ -11,6 +11,10 @@ export const contactInfo = {
     name: "Alejandra Cárdenas",
     instagram: "https://www.instagram.com/alessita.mua",
   },
+  adrian: {
+    name: "Adrian Denis",
+    calendar: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ROAVzYMwMw7h--x8JNXbtyZKK-_RmF0xz530SBnmnh8GneBbKUgAHpeGdp-NrV2_d-ycP65M5?gv=true",
+  },
   email: "hbarberiaac@gmail.com",
 };
 

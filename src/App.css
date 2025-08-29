@@ -15,10 +15,10 @@ body {
 
 /* Estilos para contenedores de contenido *dentro* de las páginas */
 .page-content-container {
-  max-width: 1100px; /* Ancho máximo para el contenido normal */
+  max-width: 1200px; /* Ancho máximo aumentado para más espacio */
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem 1.5rem; /* Padding para el contenido */
+  padding: 2rem 0.1rem; /* Padding lateral reducido */
   flex-grow: 1; /* Ayuda si el contenido es corto */
   width: 100%; /* Asegura que ocupe espacio */
   box-sizing: border-box; /* Incluye padding en el ancho */
@@ -49,6 +49,13 @@ body {
   /* Ajustes adicionales si son necesarios, por ejemplo, tamaño */
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
+}
+
+/* Responsividad para el contenedor principal */
+@media (max-width: 768px) {
+  .page-content-container {
+    padding: 2rem 1rem; /* Más padding en móviles para legibilidad */
+  }
 }
 
 /* Responsividad para la sección CTA */

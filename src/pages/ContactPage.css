@@ -106,6 +106,13 @@
   margin-left: 0.25rem; /* Pequeño espacio a la izquierda */
 }
 
+.calendar-icon {
+  color: #4285F4; /* Color azul de Google Calendar */
+  font-size: 1.2em; /* Tamaño del icono */
+  vertical-align: middle; /* Alinear verticalmente con el texto */
+  margin-left: 0.25rem; /* Pequeño espacio a la izquierda */
+}
+
 /* Sobrescribir estilos de .cta-section solo para ContactPage */
 .contact-page .cta-section {
   background-color: transparent; /* Sin fondo */
