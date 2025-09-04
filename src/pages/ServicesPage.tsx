@@ -14,7 +14,7 @@ interface Service {
 }
 
 // Servicios organizados por especialista
-const albertoMiguelServices: Service[] = [
+const albertoServices: Service[] = [
   { name: "Corte", price: 200, duration: "45 minutos aprox" },
   { name: "Arreglo de Barba", price: 200, duration: "45 minutos aprox" },
   { name: "Corte + Barba", price: 400, duration: "90 minutos aprox" },
@@ -121,7 +121,7 @@ const ServicesPage: React.FC = () => {
                 <p className="specialist-title">Maestro Barbero & Fundador</p>
               </div>
               <div className="specialist-services">
-                {albertoMiguelServices.map((service, index) => (
+                {albertoServices.map((service, index) => (
                   <div key={index} className="service-card">
                     <h3>{service.name}</h3>
                     {service.description && <p className="service-description">{service.description}</p>}
@@ -137,28 +137,7 @@ const ServicesPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Columna Miguel */}
-            <div className="specialist-column">
-              <div className="specialist-header">
-                <h2>Miguel Ángel Rojas</h2>
-                <p className="specialist-title">Barbero Profesional</p>
-              </div>
-              <div className="specialist-services">
-                {albertoMiguelServices.map((service, index) => (
-                  <div key={index} className="service-card">
-                    <h3>{service.name}</h3>
-                    {service.description && <p className="service-description">{service.description}</p>}
-                    {service.duration && <p className="service-duration">Duración: {service.duration}</p>}
-                    {service.price && <p className="service-price">Desde ${service.price}</p>}
-                    {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
-                    {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
-                    <Link to="/reservar?barber=miguel" className="service-book-button">
-                      Reserva con Miguel
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
+
 
             {/* Columna Alejandra */}
             <div className="specialist-column alejandra-column">

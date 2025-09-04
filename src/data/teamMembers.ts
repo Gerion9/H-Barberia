@@ -19,14 +19,7 @@ export const teamMembers: BarberProfile[] = [
     description: "Con amplia experiencia y una visión artística, Alberto lidera H Barbería y guía a futuros talentos impartiendo nuestros cursos de barbería.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true"
   },
-  {
-    id: "miguel",
-    name: "Miguel Angel Rojas",
-    title: "Barbero Profesional",
-    imageUrl: "/Miguel-Angel.png", // Asumiendo /public
-    description: "Especializado en tendencias modernas y técnicas clásicas, Miguel Ángel aporta creatividad y habilidad a cada cliente.",
-    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LGWBMpVHd_HfnfcHi7Hq_JcVpO3RQxHwehHDx2wpvGFX8XD-Pi3GveLUFw6mYLaLnQ5vlKV66?gv=true"
-  },
+
   {
     id: "alejandra",
     name: "Alejandra Cárdenas",

@@ -1,8 +1,5 @@
 export const contactInfo = {
-  miguel: {
-    name: "Miguel Angel",
-    phone: "+52 1 312 415 4298",
-  },
+
   barberia: {
     name: "H Barberia (Alberto Cobian)",
     phone: "+52 1 312 231 6946",

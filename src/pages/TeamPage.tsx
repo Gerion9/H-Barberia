@@ -17,7 +17,7 @@ const TeamPage: React.FC = () => {
     <>
       <Helmet>
         <title>Nuestro Equipo - H Barbería Colima</title>
-        <meta name="description" content="Conoce a los talentosos barberos de H Barbería en Colima: Alberto Cobián y Miguel Angel Rojas. Profesionales dedicados a tu estilo." />
+        <meta name="description" content="Conoce al talentoso equipo de H Barbería en Colima: Alberto Cobián, Adrian Denis, Christian y Alejandra Cárdenas. Profesionales dedicados a tu estilo." />
       </Helmet>
 
       <div className="page-content-container"> { /* Contenedor para centrar */ }
@@ -55,4 +55,4 @@ const TeamPage: React.FC = () => {
   );
 };
 
-export default TeamPage; 
+export default TeamPage;
