@@ -100,6 +100,44 @@ const adrianServices: Service[] = [
   }
 ];
 
+const edsonServices: Service[] = [
+  { name: "Corte", price: 200, duration: "45 minutos aprox" },
+  { name: "Arreglo de Barba", price: 200, duration: "45 minutos aprox" },
+  { name: "Corte + Barba", price: 400, duration: "90 minutos aprox" },
+  { name: "Exfoliación", price: 150, duration: "30 minutos aprox" },
+  {
+    name: "Rizos",
+    price: 800,
+    includes: "corte",
+    duration: "3-4 horas aprox",
+    priceNotes: "Precio base para pelo corto. Pelo medio/largo varía."
+  },
+  {
+    name: "Mechas",
+    price: 800,
+    includes: "corte",
+    duration: "Desde 4 horas",
+    priceNotes: "Precio base para pelo corto. Depende del largo y cabello del cliente."
+  },
+  {
+    name: "Decoloración Completa",
+    price: 1000,
+    includes: "corte",
+    duration: "Desde 4 horas",
+    priceNotes: "Precio base para pelo corto. Depende del largo y cabello del cliente."
+  },
+  {
+    name: "Aplicación de Tinte",
+    price: 700,
+    includes: "corte (cabello corto)",
+    priceNotes: "Cabello corto $700 (incluye corte), Cabello medio $700 (solo tinte). Pelo largo depende."
+  },
+  {
+    name: "Tratamiento Capilar",
+    priceNotes: "El precio y duración dependen del largo del cabello y del tratamiento específico."
+  }
+];
+
 const ServicesPage: React.FC = () => {
   return (
     <>
@@ -179,6 +217,29 @@ const ServicesPage: React.FC = () => {
                     {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
                     <Link to="/reservar?barber=adrian" className="service-book-button">
                       Reserva con Adrian
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Columna Edson */}
+            <div className="specialist-column">
+              <div className="specialist-header">
+                <h2>Edson</h2>
+                <p className="specialist-title">Barbero Profesional</p>
+              </div>
+              <div className="specialist-services">
+                {edsonServices.map((service, index) => (
+                  <div key={index} className="service-card">
+                    <h3>{service.name}</h3>
+                    {service.description && <p className="service-description">{service.description}</p>}
+                    {service.duration && <p className="service-duration">Duración: {service.duration}</p>}
+                    {service.price && <p className="service-price">Desde ${service.price}</p>}
+                    {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
+                    {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
+                    <Link to="/reservar?barber=edson" className="service-book-button">
+                      Reserva con Edson
                     </Link>
                   </div>
                 ))}
