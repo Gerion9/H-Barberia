@@ -81,9 +81,9 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    Edson: 
+                    Exon: 
                     <IconCalendar />
-                    <a href={contactInfo.edson.calendar} target="_blank" rel="noopener noreferrer">
+                    <a href={contactInfo.exon.calendar} target="_blank" rel="noopener noreferrer">
                       Reservar Cita
                     </a> 
                   </div>

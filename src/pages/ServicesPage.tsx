@@ -100,7 +100,7 @@ const adrianServices: Service[] = [
   }
 ];
 
-const edsonServices: Service[] = [
+const exonServices: Service[] = [
   { name: "Corte", price: 200, duration: "45 minutos aprox" },
   { name: "Arreglo de Barba", price: 200, duration: "45 minutos aprox" },
   { name: "Corte + Barba", price: 400, duration: "90 minutos aprox" },
@@ -223,14 +223,14 @@ const ServicesPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Columna Edson */}
+            {/* Columna Exon */}
             <div className="specialist-column">
               <div className="specialist-header">
-                <h2>Edson</h2>
+                <h2>Exon</h2>
                 <p className="specialist-title">Barbero Profesional</p>
               </div>
               <div className="specialist-services">
-                {edsonServices.map((service, index) => (
+                {exonServices.map((service, index) => (
                   <div key={index} className="service-card">
                     <h3>{service.name}</h3>
                     {service.description && <p className="service-description">{service.description}</p>}
@@ -238,8 +238,8 @@ const ServicesPage: React.FC = () => {
                     {service.price && <p className="service-price">Desde ${service.price}</p>}
                     {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
                     {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
-                    <Link to="/reservar?barber=edson" className="service-book-button">
-                      Reserva con Edson
+                    <Link to="/reservar?barber=exon" className="service-book-button">
+                      Reserva con Exon
                     </Link>
                   </div>
                 ))}

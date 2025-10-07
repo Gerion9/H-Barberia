@@ -37,11 +37,11 @@ export const teamMembers: BarberProfile[] = [
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ROAVzYMwMw7h--x8JNXbtyZKK-_RmF0xz530SBnmnh8GneBbKUgAHpeGdp-NrV2_d-ycP65M5?gv=true"
   },
   {
-    id: "edson",
-    name: "Edson",
+    id: "exon",
+    name: "Exon",
     title: "Barbero Profesional",
-    imageUrl: "/Edson.jpg",
-    description: "Barbero experto con un enfoque meticuloso en cada corte, Edson combina técnica y creatividad para lograr resultados impecables.",
+    imageUrl: "/Exon.jpg",
+    description: "Barbero experto con un enfoque meticuloso en cada corte, Exon combina técnica y creatividad para lograr resultados impecables.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Tt23N8Ni-ODwdWLl-ySK4TXMMR2MsChCvX44nhfVp5WzhUgItFMunJGCxZuK1CxJvwJfzX5z-?gv=true"
   }
 ];
