@@ -6,37 +6,37 @@
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #2c1e13;
+  color: var(--color-ink);
 }
 
 .courses-intro {
   text-align: center;
   margin-bottom: 2.5rem;
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-subtle);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .course-general-info {
-  background-color: #fdfbf5; /* Un beige muy claro */
+  background-color: var(--color-cream); /* Un beige muy claro */
   padding: 1.5rem 2rem;
   border-radius: 8px;
   margin-bottom: 3rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border-2);
 }
 
 .course-general-info h2 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   font-size: 1.6rem;
 }
 
 .course-general-info p {
   margin-bottom: 0.5rem;
-  color: #444;
+  color: var(--color-muted);
   line-height: 1.6;
 }
 
@@ -45,7 +45,7 @@
   font-size: 1.8rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #2c1e13;
+  color: var(--color-ink);
 }
 
 .courses-grid {
@@ -56,13 +56,13 @@
 }
 
 .course-card {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
-  border-left: 5px solid #b38b00; /* Borde lateral dorado */
+  border-left: 5px solid var(--color-gold); /* Borde lateral dorado */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -98,11 +98,11 @@
   margin-top: 0;
   margin-bottom: 0.75rem;
   font-size: 1.3rem;
-  color: #333;
+  color: var(--color-ink);
 }
 
 .course-summary {
-  color: #555;
+  color: var(--color-subtle);
   font-size: 0.95rem;
   line-height: 1.6;
   flex-grow: 1; /* Empuja meta hacia abajo */
@@ -112,8 +112,8 @@
 .course-meta {
   margin-top: auto; /* Empuja al final */
   font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #eee;
+  color: var(--color-subtle);
+  border-top: 1px solid var(--color-border-2);
   padding-top: 0.8rem;
 }
 
@@ -126,7 +126,7 @@
 .course-contact-section {
   text-align: center;
   padding: 2.5rem 1.5rem;
-  background-color: #f8f5f0;
+  background-color: var(--color-cream);
   border-radius: 8px;
   margin-top: 2rem;
 }
@@ -134,12 +134,12 @@
 .course-contact-section h2 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   font-size: 1.6rem;
 }
 
 .course-contact-section p {
-  color: #555;
+  color: var(--color-subtle);
   max-width: 500px;
   margin: 0 auto 1.5rem auto;
   line-height: 1.6;
@@ -161,7 +161,7 @@
 .whatsapp-contact-person {
   margin-top: 1rem !important; /* Añadir espacio arriba */
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-subtle);
 }
 
 /* Estilos para Detalles Principales */
@@ -169,25 +169,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables */
   gap: 1rem 1.5rem; /* Espacio vertical y horizontal */
-  background-color: #fdfbf5; 
+  background-color: var(--color-cream); 
   padding: 1.5rem 2rem;
   border-radius: 8px;
   margin-bottom: 3rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border-2);
 }
 
 .course-main-details div {
   font-size: 0.95rem;
-  color: #444;
+  color: var(--color-muted);
 }
 
 .course-main-details div strong {
-  color: #2c1e13;
+  color: var(--color-ink);
 }
 
 .course-main-details small {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--color-subtle);
 }
 
 /* Estilos para Temario */
@@ -203,7 +203,7 @@
   margin-bottom: 0.8rem;
   padding-left: 1.8rem; /* Espacio para el icono */
   position: relative;
-  color: #333;
+  color: var(--color-ink);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -213,7 +213,7 @@
   position: absolute;
   left: 0;
   top: 0.1em; /* Ajuste vertical */
-  color: #b38b00; /* Color dorado */
+  color: var(--color-gold); /* Color dorado */
   font-weight: bold;
   font-size: 1.1em;
 }
@@ -245,11 +245,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 1.8rem 2rem; 
-  background-color: #ffffff; /* Fondo blanco para resaltar */
+  background-color: var(--color-surface); /* Fondo blanco para resaltar */
   padding: 2rem 2.5rem; /* Más padding */
   border-radius: 10px; /* Bordes más redondeados */
   margin-bottom: 3.5rem;
-  border: 1px solid #eaeaea; 
+  border: 1px solid var(--color-border); 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
 }
 
@@ -258,32 +258,32 @@
   align-items: flex-start; 
   gap: 1rem; 
   font-size: 1rem;
-  color: #333;
+  color: var(--color-ink);
 }
 
 .detail-icon { 
   flex-shrink: 0; 
   width: 24px; 
   height: 24px;
-  color: #b38b00; 
+  color: var(--color-gold); 
   margin-top: 0.1em; 
 }
 
 .detail-item strong {
-  color: #2c1e13; 
+  color: var(--color-ink); 
   display: block; 
   margin-bottom: 0.2rem;
 }
 
 .detail-item small {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-subtle);
   display: block; 
   line-height: 1.4;
 }
 .detail-item em { 
     font-style: normal;
-    color: #555;
+    color: var(--color-subtle);
 }
 
 .course-level-detail {
@@ -298,9 +298,9 @@
   font-size: 1.8rem;
   margin-top: 3.5rem; /* Más espacio arriba */
   margin-bottom: 1.8rem; /* Más espacio abajo */
-  color: #2c1e13;
+  color: var(--color-ink);
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #b38b00; /* Línea dorada */
+  border-bottom: 2px solid var(--color-gold); /* Línea dorada */
   display: inline-block; /* Para que el borde no ocupe todo el ancho */
 }
 
@@ -316,7 +316,7 @@
   margin-bottom: 1rem; 
   padding-left: 2rem; 
   position: relative;
-  color: #333;
+  color: var(--color-ink);
   font-size: 1.05rem; 
   line-height: 1.6; 
 }
@@ -326,7 +326,7 @@
   position: absolute;
   left: 0;
   top: 0.15em; 
-  color: #b38b00; 
+  color: var(--color-gold); 
   font-weight: bold;
   font-size: 1.2em; 
 }
@@ -346,7 +346,7 @@
 .course-contact-section {
   text-align: center;
   padding: 3rem 1.5rem; /* Más padding vertical */
-  background-color: #f8f5f0;
+  background-color: var(--color-cream);
   border-radius: 10px; /* Coherente con detalles */
   margin-top: 3rem;
 }
@@ -360,7 +360,7 @@
 }
 
 .course-contact-section p {
-  color: #555;
+  color: var(--color-subtle);
   max-width: 550px; /* Ligeramente más ancho */
   margin: 0 auto 1.8rem auto; /* Más margen inferior */
   line-height: 1.7;

@@ -1,5 +1,5 @@
 .booking-teaser-section {
-  background-color: #e8e2d9; /* Un color crema/grisáceo diferente */
+  background-color: var(--color-surface-2); /* Un color crema/grisáceo diferente */
   padding-top: 3rem;
   padding-bottom: 3.5rem;
   text-align: center;
@@ -16,13 +16,13 @@
 
 .booking-teaser-section h2 {
   font-size: 1.9rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 .booking-teaser-section p {
-  color: #5a4d41;
+  color: var(--color-muted);
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;

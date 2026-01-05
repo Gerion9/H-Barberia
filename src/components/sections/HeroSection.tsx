@@ -4,13 +4,13 @@ import './HeroSection.css'; // Estilos específicos
 
 const HeroSection: React.FC = () => {
   // Reutilizamos la ruta al logo
-  const logoUrl = '/logo.png'; 
+  const logoUrl = '/New_Logo-removebg-preview.png'; 
 
   return (
     <section className="hero-section">
       <div className="hero-content">
         {/* Logo grande añadido aquí */}
-        <img src={logoUrl} alt="Logo Barbería H Alberto Cobián" className="hero-logo-img" />
+        <img src={logoUrl} alt="Logo H Barbería - Cortes con Estilo" className="hero-logo-img" />
 
         <h1 className="hero-title">Arte y Estilo en Cada Corte</h1>
         <p className="hero-subtitle">

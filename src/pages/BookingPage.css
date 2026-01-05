@@ -6,14 +6,14 @@
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #2c1e13;
+  color: var(--color-ink);
 }
 
 .booking-intro {
   text-align: center;
   margin-bottom: 3rem;
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-subtle);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -40,7 +40,7 @@
 }
 
 .booking-placeholder a {
-  color: #b38b00;
+  color: var(--color-gold);
   font-weight: bold;
   text-decoration: none;
 }
@@ -59,7 +59,7 @@
 .selector-label {
   display: block; /* Asegura que ocupe su propia línea */
   font-size: 1.2rem;
-  color: #333; /* Un gris un poco más oscuro */
+  color: var(--color-ink); /* Un gris un poco más oscuro */
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -75,8 +75,8 @@
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
-  color: #2c1e13; /* Color principal oscuro */
-  background-color: #f8f5f0; /* Un fondo beige muy claro */
+  color: var(--color-ink); /* Color principal oscuro */
+  background-color: var(--color-cream); /* Fondo cálido */
   border: 2px solid #e0dacd; /* Borde sutil a juego */
   border-radius: 25px; /* Bordes redondeados */
   cursor: pointer;
@@ -92,10 +92,10 @@
 }
 
 .barber-select-button.selected {
-  background-color: #2c1e13; /* Fondo oscuro para el seleccionado */
-  color: #fff; /* Texto blanco para el seleccionado */
-  border-color: #2c1e13; /* Borde del mismo color */
-  box-shadow: 0 6px 12px rgba(44, 30, 19, 0.2); /* Sombra más pronunciada */
+  background-color: var(--color-black); /* Fondo oscuro para el seleccionado */
+  color: var(--color-on-black); /* Texto para el seleccionado */
+  border-color: var(--color-black); /* Borde del mismo color */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18); /* Sombra más pronunciada */
   transform: translateY(-2px); 
 }
 
@@ -159,13 +159,13 @@
 }
 
 .error-actions a {
-  color: #2c1e13;
+  color: var(--color-ink);
   text-decoration: none;
   font-weight: 500;
 }
 
 .error-actions a:hover {
-  color: #b38b00;
+  color: var(--color-gold);
   text-decoration: underline;
 }
 
@@ -182,7 +182,7 @@
 .google-calendar-embed-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   font-size: 1.6rem;
 }
 
@@ -197,7 +197,7 @@
 
 .select-prompt {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-subtle);
   margin: 0;
 }
 

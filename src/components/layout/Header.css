@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem; /* Ajustamos padding */
-  background-color: #fffbf5; /* Un crema muy pálido, cercano al blanco */
+  background: linear-gradient(180deg, var(--color-black) 0%, var(--color-black-2) 100%);
   /* border-bottom: 1px solid #eee; Alternativa: sombra */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25); /* Sombra más rica en fondo oscuro */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   position: sticky; /* Header fijo al hacer scroll */
   top: 0;
   z-index: 100; /* Asegura que esté por encima */
@@ -14,7 +15,7 @@
 }
 
 .logo-container .logo-img {
-  height: 50px; /* Reducimos un poco el logo */
+  height: 52px; /* Tamaño base (móvil/tablet) */
   width: auto;
 }
 
@@ -33,14 +34,14 @@
 
 .main-nav a {
   text-decoration: none;
-  color: #333; /* Color de enlace */
+  color: var(--color-on-black); /* Color de enlace */
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
-  color: #b38b00; /* Un color dorado para el hover, ajústalo */
+  color: var(--color-gold); /* Un color dorado para el hover */
 }
 
 /* --- Contenedor CTA --- */
@@ -66,19 +67,21 @@
 /* --- Estilos generales del botón (reutilizado) --- */
 .cta-button {
   padding: 0.75rem 1.5rem;
-  background-color: #b38b00; /* Color dorado principal */
-  color: white;
+  background-color: var(--color-gold); /* Color dorado principal */
+  color: var(--color-black);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   text-decoration: none; /* Para que Link se vea como botón */
   display: inline-block; /* Asegurar padding */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 .cta-button:hover {
-  background-color: #9c7a00; /* Un dorado más oscuro al pasar el ratón */
+  background-color: var(--color-gold-hover); /* Un dorado más oscuro al pasar el ratón */
+  transform: translateY(-1px);
 }
 
 /* --- Botón Hamburguesa --- */
@@ -88,7 +91,7 @@
   padding: 0.5rem;
   cursor: pointer;
   display: block; /* Visible en móvil por defecto */
-  color: #333; /* Color del icono */
+  color: var(--color-on-black); /* Color del icono */
 }
 
 /* --- Navegación Móvil (Dropdown) --- */
@@ -97,10 +100,11 @@
   top: 100%; /* Justo debajo del header */
   left: 0;
   right: 0;
-  background-color: #fffbf5; /* Mismo fondo que header */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para separarlo */
+  background-color: var(--color-black); /* Mismo fondo que header */
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.35); /* Sombra para separarlo */
   z-index: 99; /* Debajo del header pero encima del contenido */
   padding: 1rem 0; /* Espaciado vertical */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobile-nav ul {
@@ -121,15 +125,15 @@
   display: block;
   padding: 0.8rem 1rem;
   text-decoration: none;
-  color: #333;
+  color: var(--color-on-black);
   font-weight: 500;
   transition: background-color 0.2s ease;
 }
 
 .mobile-nav a:hover,
 .mobile-nav a:focus {
-  background-color: #f0eade; /* Un hover sutil */
-  color: #b38b00;
+  background-color: rgba(255, 255, 255, 0.06); /* Un hover sutil */
+  color: var(--color-gold);
 }
 
 .mobile-nav .mobile-nav-cta {
@@ -146,6 +150,9 @@
 
 /* --- Media Query para Escritorio (ej: 992px) --- */
 @media (min-width: 992px) {
+  .logo-container .logo-img {
+    height: 60px; /* En desktop el logo respira mejor */
+  }
   .main-nav.desktop-nav {
     display: block; /* Mostrar nav desktop */
   }

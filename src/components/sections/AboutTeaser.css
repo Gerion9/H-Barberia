@@ -1,6 +1,6 @@
 .about-teaser-section {
   /* padding: 3rem 0; Eliminamos padding */
-  background-color: #fafafa;
+  background-color: var(--color-surface-3);
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -50,12 +50,12 @@
   width: 100%;
   max-width: 350px;
   aspect-ratio: 1 / 1;
-  background-color: #e0e0e0;
+  background-color: var(--color-border);
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #999;
+  color: rgba(0, 0, 0, 0.45);
 }
 .image-placeholder::after {
     content: 'Imagen Perfil';
@@ -67,12 +67,12 @@
 .section-title-alt {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   font-weight: 600;
 }
 
 .about-teaser-text p {
-  color: #555;
+  color: var(--color-subtle);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }

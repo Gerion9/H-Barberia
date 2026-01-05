@@ -20,7 +20,7 @@ const IconX = () => (
 );
 
 const Header: React.FC = () => {
-  const logoUrl = '/logo.png';
+  const logoUrl = '/New_Logo-removebg-preview.png';
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
     <header className="app-header">
       <div className="logo-container">
         <Link to="/">
-          <img src={logoUrl} alt="Logo Barbería H Alberto Cobián" className="logo-img" />
+          <img src={logoUrl} alt="Logo H Barbería - Cortes con Estilo" className="logo-img" />
         </Link>
       </div>
 

@@ -1,10 +1,12 @@
 .hero-section {
-  background-color: #FAF0E6;
+  background:
+    radial-gradient(900px 360px at 50% 0%, rgba(179, 139, 0, 0.22) 0%, rgba(11, 11, 11, 0) 60%),
+    linear-gradient(180deg, var(--color-black) 0%, var(--color-black-2) 100%);
   background-size: cover;
   background-position: center;
-  color: #333;
-  padding: 1rem 2rem;
-  min-height: 20vh;
+  color: var(--color-on-black);
+  padding: 2.5rem 2rem;
+  min-height: 28vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,11 +19,13 @@
 
 .hero-logo-img {
   display: block;
-  max-width: 200px;
+  max-width: 230px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
 }
 
 .hero-title {
@@ -29,13 +33,13 @@
   font-weight: 700;
   margin-bottom: 0.8rem;
   line-height: 1.2;
-  color: #2c1e13;
+  color: var(--color-on-black);
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #5a4d41;
+  color: var(--color-on-black-muted);
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
@@ -44,26 +48,27 @@
 .hero-cta-button {
   display: inline-block;
   padding: 0.9rem 2.2rem;
-  background-color: #b38b00;
-  color: white;
+  background-color: var(--color-gold);
+  color: var(--color-black);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
 .hero-cta-button:hover {
-  background-color: #9c7a00;
+  background-color: var(--color-gold-hover);
   transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 1rem 1.5rem;
-    min-height: 15vh;
+    padding: 2rem 1.5rem;
+    min-height: 20vh;
   }
   
   .hero-logo-img {

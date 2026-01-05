@@ -1,6 +1,6 @@
 .services-highlight-section {
   /* padding: 3rem 0; Eliminamos padding de la sección */
-  background-color: #ffffff; /* Mantenemos fondo blanco */
+  background-color: var(--color-surface); /* Mantenemos fondo blanco */
   padding-top: 3rem; /* Espacio arriba */
   padding-bottom: 3rem; /* Espacio abajo */
 }
@@ -20,7 +20,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2.5rem;
-  color: #2c1e13; /* Marrón oscuro */
+  color: var(--color-ink); /* Marrón oscuro */
   position: relative;
 }
 
@@ -30,7 +30,7 @@
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #b38b00; /* Dorado */
+  background-color: var(--color-gold); /* Dorado */
   margin: 0.5rem auto 0;
 }
 
@@ -43,11 +43,11 @@
 }
 
 .highlight-card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1.8rem;
   text-align: center;
-  background-color: #fdfdfd; /* Un blanco ligeramente distinto */
+  background-color: var(--color-surface); /* Un blanco ligeramente distinto */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -60,25 +60,25 @@
   margin-top: 0;
   margin-bottom: 0.8rem;
   font-size: 1.3rem;
-  color: #333;
+  color: var(--color-ink);
 }
 
 .highlight-card p {
-  color: #666;
+  color: var(--color-subtle);
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1.2rem;
 }
 
 .highlight-link {
-  color: #b38b00; /* Dorado */
+  color: var(--color-gold); /* Dorado */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .highlight-link:hover {
-  color: #8a6d00; /* Dorado más oscuro */
+  color: var(--color-gold-hover); /* Dorado más oscuro */
   text-decoration: underline;
 }
 
@@ -92,8 +92,8 @@
   display: inline-block;
   padding: 0.8rem 1.8rem;
   background-color: transparent;
-  color: #b38b00; /* Dorado */
-  border: 2px solid #b38b00; /* Borde Dorado */
+  color: var(--color-gold); /* Dorado */
+  border: 2px solid var(--color-gold); /* Borde Dorado */
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -103,8 +103,8 @@
 }
 
 .cta-button-outline:hover {
-  background-color: #b38b00; /* Dorado */
-  color: white;
+  background-color: var(--color-gold); /* Dorado */
+  color: var(--color-black);
 }
 
 /* Media Query para pantallas más pequeñas */

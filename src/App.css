@@ -31,14 +31,14 @@ body {
   text-align: center; 
   margin-top: 3rem; 
   padding: 2.5rem 1rem; 
-  background-color: #f8f8f8; /* Fondo sutil diferente */
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee; 
+  background-color: var(--color-surface-2); /* Fondo sutil diferente */
+  border-top: 1px solid var(--color-border-2);
+  border-bottom: 1px solid var(--color-border-2); 
 }
 
 .cta-section h2 {
   font-size: 1.8rem;
-  color: #2c1e13;
+  color: var(--color-ink);
   margin-top: 0;
   margin-bottom: 1.5rem;
 }

@@ -1,9 +1,9 @@
 .app-footer {
-  background-color: #f8f8f8; /* Un gris muy claro */
-  color: #555;
+  background: linear-gradient(180deg, var(--color-black-2) 0%, var(--color-black) 100%);
+  color: var(--color-on-black-muted);
   padding: 1.5rem 2rem;
   margin-top: 2rem; /* Espacio arriba del footer */
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .footer-content {
@@ -13,12 +13,12 @@
 }
 
 .footer-links a {
-  color: #555;
+  color: var(--color-on-black-muted);
   text-decoration: none;
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #b38b00;
+  color: var(--color-gold);
 } 
