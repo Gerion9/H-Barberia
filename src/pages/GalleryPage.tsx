@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 // Importar Lightbox y sus estilos
 import Lightbox from "yet-another-react-lightbox";
@@ -12,6 +12,7 @@ import './GalleryPage.css'; // Estilos para la galería
 interface GalleryImage {
   id: string;
   src: string;
+  fullSrc?: string;
   alt: string;
   category: string;
 }
@@ -24,6 +25,68 @@ interface GalleryCategory {
   images: GalleryImage[];
 }
 
+type DriveFile = {
+  id: string;
+  name: string;
+  mimeType?: string;
+};
+
+const DRIVE_API_KEY = import.meta.env.VITE_GOOGLE_DRIVE_API_KEY as string | undefined;
+const DRIVE_HACKY_ENDPOINT = import.meta.env.DEV ? '/api/drive-folder' : '/.netlify/functions/drive-folder';
+
+function extractGoogleDriveId(url: string): string | null {
+  if (!url) return null;
+
+  try {
+    const parsed = new URL(url);
+    const id = parsed.searchParams.get('id');
+    if (id) return id;
+
+    // Support /folders/<id> format too
+    const folderMatch = parsed.pathname.match(/\/folders\/([^/]+)/);
+    if (folderMatch?.[1]) return folderMatch[1];
+  } catch {
+    // Ignore invalid URL
+  }
+
+  return null;
+}
+
+function buildDriveImageUrl(fileId: string, width: number) {
+  // Works for public images
+  return `https://lh3.googleusercontent.com/d/${fileId}=w${width}`;
+}
+
+async function fetchDriveFolderImages(folderId: string): Promise<DriveFile[]> {
+  if (!DRIVE_API_KEY) return [];
+
+  const params = new URLSearchParams({
+    q: `'${folderId}' in parents and trashed=false and mimeType contains 'image/'`,
+    fields: 'files(id,name,mimeType)',
+    pageSize: '200',
+    orderBy: 'createdTime desc',
+    key: DRIVE_API_KEY,
+  });
+
+  const res = await fetch(`https://www.googleapis.com/drive/v3/files?${params.toString()}`);
+  if (!res.ok) {
+    throw new Error(`Google Drive API error: ${res.status}`);
+  }
+
+  const data = (await res.json()) as { files?: DriveFile[] };
+  return data.files ?? [];
+}
+
+async function fetchDriveFolderImageIdsHacky(folderId: string): Promise<string[]> {
+  const res = await fetch(`${DRIVE_HACKY_ENDPOINT}?folderId=${encodeURIComponent(folderId)}`);
+  if (!res.ok) {
+    throw new Error(`Hacky Drive folder endpoint error: ${res.status}`);
+  }
+
+  const data = (await res.json()) as { ids?: string[] };
+  return data.ids ?? [];
+}
+
 // Configuración de categorías basadas en las carpetas de Google Drive
 const galleryCategories: GalleryCategory[] = [
   {
@@ -31,51 +94,35 @@ const galleryCategories: GalleryCategory[] = [
     name: 'Cortes y Tintes',
     description: 'Nuestros mejores trabajos en cortes de cabello, tintes y estilos únicos',
     driveUrl: 'https://drive.google.com/open?id=189N_9Jfqp4j8zzAi9SMGExmQBSMWDEjj&usp=drive_copy',
-    images: [
-      { id: 'corte1', src: 'https://drive.google.com/uc?export=view&id=1corte1', alt: 'Corte moderno', category: 'cortes' },
-      { id: 'corte2', src: 'https://drive.google.com/uc?export=view&id=1corte2', alt: 'Tinte profesional', category: 'cortes' },
-      // Estas imágenes se actualizarán dinámicamente desde Drive
-    ]
+    images: []
   },
   {
     id: 'productos',
     name: 'Productos',
     description: 'Los mejores productos para el cuidado del cabello y barba',
     driveUrl: 'https://drive.google.com/open?id=13Cqi5i3tMzK9VpZaFGmlog3uHhiKyzP-&usp=drive_copy',
-    images: [
-      { id: 'prod1', src: 'https://drive.google.com/uc?export=view&id=1prod1', alt: 'Productos de calidad', category: 'productos' },
-      // Estas imágenes se actualizarán dinámicamente desde Drive
-    ]
+    images: []
   },
   {
     id: 'equipo',
     name: 'Nuestro Equipo',
     description: 'Conoce a los profesionales que hacen posible la magia en H Barbería',
     driveUrl: 'https://drive.google.com/open?id=1Iazu-vx0zmyPzCGJN-BdMbeGq6qqvXHL&usp=drive_copy',
-    images: [
-      { id: 'equipo1', src: 'https://drive.google.com/uc?export=view&id=1equipo1', alt: 'Equipo profesional', category: 'equipo' },
-      // Estas imágenes se actualizarán dinámicamente desde Drive
-    ]
+    images: []
   },
   {
     id: 'cursos',
     name: 'Cursos y Capacitación',
     description: 'Formación continua y cursos especializados en barbería',
     driveUrl: 'https://drive.google.com/open?id=1ke7bztJ74ZT2M-OO9WDf59p0cYXOAcwe&usp=drive_copy',
-    images: [
-      { id: 'curso1', src: 'https://drive.google.com/uc?export=view&id=1curso1', alt: 'Curso de barbería', category: 'cursos' },
-      // Estas imágenes se actualizarán dinámicamente desde Drive
-    ]
+    images: []
   },
   {
     id: 'clases',
     name: 'Clases Especiales',
     description: 'Momentos especiales de nuestras clases y talleres',
     driveUrl: 'https://drive.google.com/open?id=15lCN_vvMo8Mt1Q2L7mR9QfhPD8rCWg_m&usp=drive_copy',
-    images: [
-      { id: 'clase1', src: 'https://drive.google.com/uc?export=view&id=1clase1', alt: 'Clase especial', category: 'clases' },
-      // Estas imágenes se actualizarán dinámicamente desde Drive
-    ]
+    images: []
   },
   {
     id: 'galeria-local',
@@ -121,18 +168,101 @@ const GalleryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('galeria-local');
   const [currentImages, setCurrentImages] = useState<GalleryImage[]>([]);
   const [slides, setSlides] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  const driveCacheRef = useRef(new Map<string, GalleryImage[]>());
+
+  const activeCategoryData = useMemo(
+    () => galleryCategories.find(cat => cat.id === activeCategory),
+    [activeCategory]
+  );
+
+  const activeDriveFolderId = useMemo(() => {
+    if (!activeCategoryData?.driveUrl) return null;
+    return extractGoogleDriveId(activeCategoryData.driveUrl);
+  }, [activeCategoryData]);
 
   // Efecto para actualizar las imágenes cuando cambia la categoría
   useEffect(() => {
-    const category = galleryCategories.find(cat => cat.id === activeCategory);
-    if (category) {
-      setCurrentImages(category.images);
-      setSlides(category.images.map(image => ({
-        src: image.src,
-        alt: image.alt
-      })));
+    let cancelled = false;
+
+    async function run() {
+      if (!activeCategoryData) return;
+
+      setLoadError(null);
+      setIsLoading(true);
+
+      // If it's a Drive category, load images dynamically (API key if available; otherwise hacky endpoint)
+      if (activeDriveFolderId) {
+        const cached = driveCacheRef.current.get(activeDriveFolderId);
+        if (cached) {
+          if (!cancelled) {
+            setCurrentImages(cached);
+            setSlides(cached.map(image => ({ src: image.fullSrc ?? image.src, alt: image.alt })));
+            setIsLoading(false);
+          }
+          return;
+        }
+
+        try {
+          let images: GalleryImage[] = [];
+
+          if (DRIVE_API_KEY) {
+            const files = await fetchDriveFolderImages(activeDriveFolderId);
+            images = files.map((file) => {
+              const alt = file.name.replace(/\.[^/.]+$/, '').replace(/[_-]+/g, ' ');
+              return {
+                id: file.id,
+                src: buildDriveImageUrl(file.id, 900),
+                fullSrc: buildDriveImageUrl(file.id, 2400),
+                alt,
+                category: activeCategoryData.id,
+              };
+            });
+          } else {
+            const ids = await fetchDriveFolderImageIdsHacky(activeDriveFolderId);
+            images = ids.map((id) => ({
+              id,
+              src: buildDriveImageUrl(id, 900),
+              fullSrc: buildDriveImageUrl(id, 2400),
+              alt: `${activeCategoryData.name} - H Barbería`,
+              category: activeCategoryData.id,
+            }));
+          }
+
+          driveCacheRef.current.set(activeDriveFolderId, images);
+
+          if (!cancelled) {
+            setCurrentImages(images);
+            setSlides(images.map(image => ({ src: image.fullSrc ?? image.src, alt: image.alt })));
+          }
+        } catch (err) {
+          console.error(err);
+          if (!cancelled) {
+            setLoadError('No pudimos cargar las imágenes en este momento.');
+            setCurrentImages(activeCategoryData.images);
+            setSlides(activeCategoryData.images.map(image => ({ src: image.fullSrc ?? image.src, alt: image.alt })));
+          }
+        } finally {
+          if (!cancelled) setIsLoading(false);
+        }
+
+        return;
+      }
+
+      // Fallback: local/static images
+      setCurrentImages(activeCategoryData.images);
+      setSlides(activeCategoryData.images.map(image => ({ src: image.fullSrc ?? image.src, alt: image.alt })));
+      setIsLoading(false);
     }
-  }, [activeCategory]);
+
+    void run();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeCategoryData, activeDriveFolderId]);
 
   // Función para abrir el lightbox en un índice específico
   const openLightbox = (idx: number) => {
@@ -144,9 +274,6 @@ const GalleryPage: React.FC = () => {
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
   };
-
-  // Obtener la categoría activa
-  const activeCategoryData = galleryCategories.find(cat => cat.id === activeCategory);
 
   return (
     <>
@@ -188,22 +315,19 @@ const GalleryPage: React.FC = () => {
             <div className="category-info">
               <h2>{activeCategoryData.name}</h2>
               <p>{activeCategoryData.description}</p>
-              {activeCategoryData.driveUrl && (
-                <div className="drive-link">
-                  <p>
-                    <strong>📁 Carpeta en Drive:</strong>{' '}
-                    <a 
-                      href={activeCategoryData.driveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="drive-button"
-                    >
-                      Ver carpeta completa
-                    </a>
-                  </p>
-                  <small>Las imágenes se actualizan automáticamente desde Google Drive</small>
-                </div>
-              )}
+            </div>
+          )}
+
+          {/* Estados de carga/error */}
+          {isLoading && (
+            <div className="gallery-loading">
+              <p>Cargando imágenes…</p>
+            </div>
+          )}
+
+          {!isLoading && loadError && (
+            <div className="gallery-error">
+              <p>{loadError}</p>
             </div>
           )}
 
@@ -233,7 +357,7 @@ const GalleryPage: React.FC = () => {
           </div>
 
           {/* Mensaje si no hay imágenes */}
-          {currentImages.length === 0 && (
+          {currentImages.length === 0 && !isLoading && !loadError && (
             <div className="no-images">
               <p>Esta categoría se actualizará pronto con nuevas imágenes.</p>
               <p>¡Mantente atento a nuestras redes sociales!</p>

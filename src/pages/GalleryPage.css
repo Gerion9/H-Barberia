@@ -71,6 +71,29 @@
   border-left: 4px solid var(--color-gold);
 }
 
+.gallery-loading,
+.gallery-error {
+  text-align: center;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-2);
+  background: var(--color-cream);
+}
+
+.gallery-error {
+  border-left: 4px solid #dc3545;
+}
+
+.gallery-loading p,
+.gallery-error p {
+  margin: 0.25rem 0;
+  color: var(--color-subtle);
+  line-height: 1.5;
+}
+
+/* (Drive embed removed: ahora renderizamos thumbnails propios + lightbox) */
+
 .category-info h2 {
   color: var(--color-ink);
   margin-bottom: 0.5rem;
@@ -83,37 +106,7 @@
   line-height: 1.6;
 }
 
-.drive-link {
-  margin-top: 1rem;
-}
-
-.drive-link p {
-  margin-bottom: 0.5rem;
-}
-
-.drive-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #4285f4, #34a853);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-left: 0.5rem;
-}
-
-.drive-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
-  text-decoration: none;
-  color: white;
-}
-
-.drive-link small {
-  color: rgba(0, 0, 0, 0.55);
-  font-style: italic;
-}
+/* (Drive button removed: usamos solo el embed en modo hacky) */
 
 /* Estilos para el CTA en la cabecera */
 .gallery-cta-header {
@@ -308,13 +301,6 @@
 
   .category-info h2 {
     font-size: 1.4rem;
-  }
-
-  .drive-button {
-    display: block;
-    margin: 0.5rem auto 0;
-    text-align: center;
-    max-width: 200px;
   }
 
   /* Grid responsivo */
