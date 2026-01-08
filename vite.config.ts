@@ -28,7 +28,7 @@ function driveFolderDevProxy() {
   return {
     name: 'drive-folder-dev-proxy',
     configureServer(server: any) {
-      server.middlewares.use('/api/drive-folder', async (req: any, res: any, next: any) => {
+      server.middlewares.use('/api/drive-folder', async (req: any, res: any) => {
         try {
           const requestUrl = new URL(req.url ?? '', 'http://localhost')
           const folderId = requestUrl.searchParams.get('folderId')
