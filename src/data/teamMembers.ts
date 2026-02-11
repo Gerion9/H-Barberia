@@ -29,14 +29,6 @@ export const teamMembers: BarberProfile[] = [
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1cf-Xbl_Z8Hev8CVTSN82C2sm50h1gWB_0HUFIugVz1wh3w4hpztHcrObsw0HJNtPe0dxVtdSk?gv=true"
   },
   {
-    id: "adrian",
-    name: "Adrian Denis",
-    title: "Barbero Profesional",
-    imageUrl: "/Adrian.jpg",
-    description: "Barbero talentoso con habilidades excepcionales en cortes modernos y clásicos, Adrian aporta estilo y precisión a cada servicio.",
-    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ROAVzYMwMw7h--x8JNXbtyZKK-_RmF0xz530SBnmnh8GneBbKUgAHpeGdp-NrV2_d-ycP65M5?gv=true"
-  },
-  {
     id: "exon",
     name: "Exon",
     title: "Barbero Profesional",
