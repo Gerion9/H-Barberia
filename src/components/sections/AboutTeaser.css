@@ -86,7 +86,7 @@
 /* Ajustes para móvil */
 @media (max-width: 768px) {
   .about-teaser-section {
-    padding-top: 2rem; /* Menos padding vertical en móvil */
+    padding-top: 2rem;
     padding-bottom: 2rem;
   }
   .about-teaser-content {
@@ -98,12 +98,39 @@
     text-align: center;
   }
   .section-title-alt {
-     font-size: 1.6rem;
+    font-size: 1.6rem;
   }
   .about-teaser-image {
-    /* Quizás reducir el max-width del placeholder/imagen en móvil */
     max-width: 280px;
     margin-left: auto;
     margin-right: auto;
+  }
+  /* Botón "Saber Más" centrado en tablet */
+  .about-teaser-text .cta-button-outline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Botón "Saber Más" full-width en móvil pequeño */
+@media (max-width: 639px) {
+  .about-teaser-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Los párrafos y títulos deben conservar su alineación */
+  .about-teaser-text h2,
+  .about-teaser-text p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-teaser-text .cta-button-outline {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 } 

@@ -1,16 +1,15 @@
 .services-highlight-section {
-  /* padding: 3rem 0; Eliminamos padding de la sección */
-  background-color: var(--color-surface); /* Mantenemos fondo blanco */
-  padding-top: 3rem; /* Espacio arriba */
-  padding-bottom: 3rem; /* Espacio abajo */
+  background-color: var(--color-surface);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-/* Contenedor para centrar el contenido de esta sección */
+/* Contenedor para centrar el contenido */
 .section-content-wrapper {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem; /* Padding lateral */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 100%;
   box-sizing: border-box;
@@ -20,111 +19,189 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2.5rem;
-  color: var(--color-ink); /* Marrón oscuro */
+  color: var(--color-ink);
   position: relative;
 }
 
-/* Línea decorativa debajo del título */
+/* Línea decorativa */
 .section-title::after {
   content: '';
   display: block;
   width: 60px;
   height: 3px;
-  background-color: var(--color-gold); /* Dorado */
+  background-color: var(--color-gold);
   margin: 0.5rem auto 0;
 }
 
+/* =============================================
+   GRID DE CARDS - Mobile First
+   ============================================= */
 .highlight-container {
   display: grid;
-  /* Ajustamos minmax para mejor comportamiento en móvil */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-  gap: 1.5rem; /* Reducimos gap un poco */
+  /* Mobile: 1 columna forzada para evitar cards apelmazadas */
+  grid-template-columns: 1fr;
+  gap: 1rem;
   margin-bottom: 2.5rem;
 }
 
+/* Tablet y arriba: auto-fit con mínimo razonable */
+@media (min-width: 560px) {
+  .highlight-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* =============================================
+   HIGHLIGHT CARD
+   ============================================= */
 .highlight-card {
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  padding: 1.8rem;
+  padding: 1.5rem;
   text-align: center;
-  background-color: var(--color-surface); /* Un blanco ligeramente distinto */
+  background-color: var(--color-surface);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+@media (hover: hover) {
+  .highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.highlight-card:active {
+  transform: scale(0.98);
 }
 
 .highlight-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
+  margin: 0;
+  font-size: 1.25rem;
   color: var(--color-ink);
 }
 
 .highlight-card p {
   color: var(--color-subtle);
   font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1.2rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
+/* =============================================
+   ENLACE "VER MÁS" - Touch target >= 44px
+   ============================================= */
 .highlight-link {
-  color: var(--color-gold); /* Dorado */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;      /* Touch target mínimo */
+  padding: 0.5rem 1rem;
+  color: var(--color-gold);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  margin-top: 0.25rem;
+  border-radius: 4px;     /* Área clickeable más clara visualmente */
 }
 
-.highlight-link:hover {
-  color: var(--color-gold-hover); /* Dorado más oscuro */
-  text-decoration: underline;
+@media (hover: hover) {
+  .highlight-link:hover {
+    color: var(--color-gold-hover);
+    text-decoration: underline;
+  }
 }
 
+/* =============================================
+   CTA PRINCIPAL
+   ============================================= */
 .section-cta {
   text-align: center;
   margin-top: 1rem;
 }
 
-/* Estilo para un botón con borde, diferente al principal */
 .cta-button-outline {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  min-height: 48px; /* Touch target generoso para botón principal */
   background-color: transparent;
-  color: var(--color-gold); /* Dorado */
-  border: 2px solid var(--color-gold); /* Borde Dorado */
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
-.cta-button-outline:hover {
-  background-color: var(--color-gold); /* Dorado */
-  color: var(--color-black);
+.cta-button-outline:active {
+  opacity: 0.8;
 }
 
-/* Media Query para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (hover: hover) {
+  .cta-button-outline:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+  }
+}
+
+/* =============================================
+   AJUSTES MOBILE (< 640px)
+   ============================================= */
+@media (max-width: 639px) {
   .services-highlight-section {
-     padding-top: 2rem;
-     padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
+
+  .section-content-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .section-title {
-     font-size: 1.7rem; /* Reducir tamaño de título en móvil */
-     margin-bottom: 2rem;
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
   }
+
   .highlight-container {
-    gap: 1rem; /* Menos gap en móvil */
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
   }
+
   .highlight-card {
-    padding: 1.5rem; /* Menos padding en tarjeta móvil */
+    padding: 1.25rem 1rem;
+    text-align: left;      /* En mobile, alineado a la izquierda es más legible */
+    align-items: flex-start;
   }
-  .cta-button-outline {
-    padding: 0.7rem 1.5rem; /* Botón ligeramente más pequeño */
+
+  .highlight-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .highlight-card p {
     font-size: 0.9rem;
   }
-} 
+
+  /* CTA ocupa todo el ancho en mobile */
+  /* display:flex reemplaza inline-flex para que width:100% funcione en iOS Safari */
+  .section-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button-outline {
+    display: flex;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

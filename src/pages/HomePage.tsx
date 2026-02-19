@@ -27,20 +27,10 @@ const HomePage: React.FC = () => {
         {/* Sección dinámica de barberos - se renderiza fuera del contenedor para ancho completo */}
         <BarberShowcase />
         
-        {/* El resto del contenido de la HomePage va dentro del contenedor */}
-        <div className="page-content-container">
-          <ServicesHighlight />
-          <AboutTeaser />
-          <BookingTeaser />
-          
-
-          
-          {/* Aquí irían otras secciones como AboutTeaser, CoursesTeaser, etc. */}
-          {/* 
-          <h2>Más contenido...</h2>
-          <p>Intro, etc.</p>
-          */}
-        </div>
+        {/* Secciones full-width: cada una gestiona su propio centrado interno */}
+        <ServicesHighlight />
+        <AboutTeaser />
+        <BookingTeaser />
       </div>
     </>
   );

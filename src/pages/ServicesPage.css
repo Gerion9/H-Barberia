@@ -1,270 +1,370 @@
+/* ================================================
+   SERVICIOS PAGE - Mobile First
+   ================================================ */
+
 .services-page {
-  /* max-width y margin ahora controlados por page-content-container */
-  /* padding: 0 1rem; <- Controlado por page-content-container */
+  padding-bottom: 2rem;
 }
 
 .services-page h1 {
   text-align: center;
-  font-size: 2.2rem; /* Podríamos ajustar el tamaño también */
-  margin-bottom: 1rem; /* Ajustar margen inferior */
-  color: var(--color-ink); /* Marrón oscuro, como otros títulos */
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-ink);
 }
 
 .services-intro {
   text-align: center;
-  /* margin-bottom: 2.5rem; */
-  margin-bottom: 1.5rem; /* Reducir margen inferior para acercar el CTA */
-  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+  font-size: 1.05rem;
   color: var(--color-subtle);
-  max-width: 700px; /* Ajustar max-width si es necesario */
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
-/* Estilos para servicios por especialista */
-.services-by-specialist {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-  align-items: stretch; /* Hace que todas las columnas tengan la misma altura */
-}
+/* ================================================
+   TABS DE ESPECIALISTAS
+   ================================================ */
 
-.specialist-column {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+.specialist-tabs {
   display: flex;
-  flex-direction: column;
+  gap: 0.6rem;
+  overflow-x: auto;       /* Scroll horizontal si no caben */
+  padding: 0.25rem 0 0.75rem 0;
+  margin-bottom: 1.25rem;
+
+  /* Ocultar scrollbar manteniendo funcionalidad */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.specialist-header {
+.specialist-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.specialist-tab {
+  flex-shrink: 0;           /* No se comprime */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;         /* Touch target mínimo */
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;     /* Pill shape */
+  border: 2px solid var(--color-black);
+  background-color: transparent;
+  color: var(--color-black);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.specialist-tab:active {
+  transform: scale(0.97);
+}
+
+/* Tab activo */
+.specialist-tab--active {
   background-color: var(--color-black);
   color: var(--color-on-black);
-  padding: 1.5rem;
-  text-align: center;
+  border-color: var(--color-black);
 }
 
-.specialist-header h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.4rem;
-  font-weight: 600;
+/* Tab especial Alejandra */
+.specialist-tab--featured {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.specialist-tab--featured.specialist-tab--active {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
+}
+
+@media (hover: hover) {
+  .specialist-tab:not(.specialist-tab--active):hover {
+    background-color: var(--color-black);
+    color: var(--color-on-black);
+  }
+
+  .specialist-tab--featured:not(.specialist-tab--active):hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+  }
+}
+
+.tab-star {
+  font-size: 0.85em;
+}
+
+/* ================================================
+   PANEL DEL ESPECIALISTA ACTIVO
+   ================================================ */
+
+.specialist-panel {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  /* Animación suave al cambiar de tab */
+  animation: fadeInPanel 0.2s ease;
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabecera del panel */
+.specialist-panel-header {
+  background-color: var(--color-black);
+  color: var(--color-on-black);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.specialist-panel--featured .specialist-panel-header {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+}
+
+.specialist-panel-header h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.35rem;
+  font-weight: 700;
 }
 
 .specialist-title {
   margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  font-size: 0.875rem;
+  opacity: 0.85;
   font-style: italic;
 }
 
+.panel-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: var(--color-black);
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ================================================
+   LISTA DE SERVICIOS
+   ================================================ */
+
 .specialist-services {
   padding: 1rem;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.85rem;
 }
 
-/* Columna especial para Alejandra */
-.alejandra-column {
-  position: relative;
-}
-
-.alejandra-column .specialist-header {
-  background-color: var(--color-gold);
-  color: var(--color-black);
-}
-
-.alejandra-column::before {
-  content: "✨ Especialidad Única";
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  background-color: var(--color-gold);
-  color: var(--color-black);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  z-index: 1;
-}
+/* ================================================
+   SERVICE CARD
+   ================================================ */
 
 .service-card {
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-  padding: 1.2rem;
-  margin-bottom: 1rem;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
   background-color: #fafafa;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
+  transition: box-shadow 0.2s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.service-card:active {
+  transform: scale(0.99);
 }
 
-.service-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: var(--color-ink);
-  font-size: 1.1rem;
-  font-weight: 600;
+@media (hover: hover) {
+  .service-card:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.09);
+  }
 }
 
-/* Servicio destacado para Alejandra */
+/* Servicio destacado (Alejandra) */
 .featured-service {
   background-color: #fff9e6;
-  border: 2px solid var(--color-gold);
-  transform: scale(1.02);
+  border: 1.5px solid var(--color-gold);
 }
 
-.featured-service:hover {
-  transform: scale(1.04) translateY(-2px);
+/* ── Fila superior: nombre + precio en la misma línea ── */
+.service-card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;        /* Si el nombre es muy largo, baja a la siguiente línea */
 }
 
-/* Botones de reserva para servicios */
+.service-card__name {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Precio alineado a la derecha y siempre prominente */
+.service-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  white-space: nowrap;    /* El precio nunca se rompe */
+  flex-shrink: 0;
+}
+
+.service-description {
+  font-size: 0.88rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.service-duration {
+  font-size: 0.83rem;
+  color: #888;
+  margin: 0;
+}
+
+.service-includes,
+.service-notes {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── Botón de reserva ── */
 .service-book-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;       /* Touch target mínimo */
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 7px;
   background-color: var(--color-black);
   color: var(--color-on-black);
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-top: auto;
-  transition: background-color 0.3s ease;
-  align-self: stretch;
-  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
+  transition: opacity 0.2s ease;
 }
 
-.service-book-button:hover {
-  background-color: var(--color-black-2);
-  color: var(--color-on-black);
-  text-decoration: none;
+.service-book-button:active {
+  opacity: 0.75;
+}
+
+@media (hover: hover) {
+  .service-book-button:hover {
+    background-color: var(--color-black-2);
+    color: var(--color-on-black);
+    text-decoration: none;
+  }
 }
 
 .featured-button {
   background-color: var(--color-gold);
   color: var(--color-black);
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.featured-button:hover {
-  background-color: var(--color-gold-hover);
-}
-
-/* Estilo para la descripción */
-.service-description {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-  font-style: italic;
-}
-
-/* Estilo para la duración */
-.service-duration {
-  font-size: 0.9rem;
-  color: #777; /* Un gris un poco más claro */
-  margin-bottom: 0.75rem; /* Espacio antes del precio */
-  font-style: italic;
-}
-
-.service-price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--color-gold); /* Dorado */
-  margin-bottom: 0.5rem;
-}
-
-.service-notes,
-.service-includes {
-  font-size: 0.9rem;
-  color: #666;
-  line-height: 1.4;
-  margin-bottom: 0.3rem;
-}
-
-/* Media Query para tablets */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .services-by-specialist {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+@media (hover: hover) {
+  .featured-button:hover {
+    background-color: var(--color-gold-hover);
   }
 }
 
-/* Media Query para móvil */
-@media (max-width: 768px) {
+/* ================================================
+   DESKTOP (≥ 768px): Tabs más grandes
+   ================================================ */
+
+@media (min-width: 768px) {
   .services-page h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
-  .services-intro {
+  .specialist-tabs {
+    justify-content: center;  /* Centrar tabs en desktop */
+    flex-wrap: wrap;           /* Permitir que salten de línea si es necesario */
+    overflow-x: visible;
+  }
+
+  .specialist-tab {
     font-size: 1rem;
+    padding: 0.6rem 2rem;
   }
 
-  .services-by-specialist {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+  .specialist-panel {
+    max-width: 700px;
+    margin: 0 auto;           /* Centrar panel en desktop */
   }
 
-  .specialist-column {
-    margin-bottom: 1rem;
+  .specialist-panel-header {
+    padding: 1.5rem 2rem;
   }
 
-  .specialist-header {
-    padding: 1.2rem;
-  }
-
-  .specialist-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .specialist-title {
-    font-size: 0.85rem;
+  .specialist-panel-header h2 {
+    font-size: 1.5rem;
   }
 
   .specialist-services {
-    padding: 0.8rem;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
   }
 
   .service-card {
-    padding: 1rem;
-    margin-bottom: 0.8rem;
+    padding: 1.1rem 1.25rem;
   }
 
-  .service-card h3 {
-    font-size: 1rem;
+  .service-card__name {
+    font-size: 1.1rem;
   }
 
   .service-price {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ================================================
+   MOBILE pequeño (< 400px): ajustes extra
+   ================================================ */
+
+@media (max-width: 399px) {
+  .services-page h1 {
+    font-size: 1.75rem;
   }
 
-  .service-book-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+  .specialist-tab {
+    font-size: 0.875rem;
+    padding: 0.45rem 1.1rem;
   }
 
-  .alejandra-column::before {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    top: -8px;
-    right: 8px;
+  .service-card__name {
+    font-size: 0.98rem;
   }
 
-  .featured-service {
-    transform: scale(1.01);
-  }
-
-  .featured-service:hover {
-    transform: scale(1.02) translateY(-1px);
+  .service-price {
+    font-size: 1.05rem;
   }
 }

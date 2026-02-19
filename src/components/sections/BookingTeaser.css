@@ -45,4 +45,17 @@
   .booking-teaser-section p {
     font-size: 1rem;
   }
+}
+
+/* Botón CTA full-width en móvil pequeño para mejor UX */
+@media (max-width: 639px) {
+  .booking-teaser-section .cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 52px;
+    font-size: 1rem;
+  }
 } 

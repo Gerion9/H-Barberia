@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import './ServicesPage.css'; // Crearemos este archivo para estilos
+import './ServicesPage.css';
 import { Link } from 'react-router-dom';
-import '../App.css'; // O donde esté .book-button
 
 interface Service {
   name: string;
@@ -13,7 +12,18 @@ interface Service {
   duration?: string;
 }
 
-// Servicios organizados por especialista
+interface Specialist {
+  key: string;
+  name: string;
+  shortName: string; // Para el tab en mobile
+  title: string;
+  bookParam: string;
+  services: Service[];
+  featured: boolean;
+}
+
+// ─── Datos de servicios ────────────────────────────────────────────────────────
+
 const albertoServices: Service[] = [
   { name: "Corte", price: 200, duration: "45 minutos aprox" },
   { name: "Arreglo de Barba", price: 200, duration: "45 minutos aprox" },
@@ -100,89 +110,136 @@ const exonServices: Service[] = [
   }
 ];
 
+// ─── Configuración de especialistas ───────────────────────────────────────────
+
+const specialists: Specialist[] = [
+  {
+    key: 'alberto',
+    name: 'Alberto Cobián',
+    shortName: 'Alberto',
+    title: 'Maestro Barbero & Fundador',
+    bookParam: 'alberto',
+    services: albertoServices,
+    featured: false,
+  },
+  {
+    key: 'alejandra',
+    name: 'Alejandra Cárdenas',
+    shortName: 'Alejandra',
+    title: 'Especialista en Trenzas',
+    bookParam: 'alejandra',
+    services: alejandraServices,
+    featured: true,
+  },
+  {
+    key: 'exon',
+    name: 'Exon',
+    shortName: 'Exon',
+    title: 'Barbero Profesional',
+    bookParam: 'exon',
+    services: exonServices,
+    featured: false,
+  },
+];
+
+// ─── Componente ───────────────────────────────────────────────────────────────
+
 const ServicesPage: React.FC = () => {
+  const [activeKey, setActiveKey] = useState<string>('alberto');
+
+  const active = specialists.find(s => s.key === activeKey)!;
+
   return (
     <>
       <Helmet>
         <title>Servicios - H Barbería Colima</title>
-        <meta name="description" content="Descubre nuestros servicios de barbería en Colima: cortes de cabello, afeitados clásicos, arreglo de barba y más. Calidad y estilo garantizados." />
+        <meta
+          name="description"
+          content="Descubre nuestros servicios de barbería en Colima: cortes de cabello, afeitados clásicos, arreglo de barba y más. Calidad y estilo garantizados."
+        />
       </Helmet>
 
       <div className="page-content-container">
         <div className="services-page">
           <h1>Nuestros Servicios</h1>
-          <p className="services-intro">Descubre la gama completa de servicios que ofrecemos para cuidar tu estilo.</p>
+          <p className="services-intro">
+            Descubre la gama completa de servicios que ofrecemos para cuidar tu estilo.
+          </p>
 
-          <div className="services-by-specialist">
-            {/* Columna Alberto */}
-            <div className="specialist-column">
-              <div className="specialist-header">
-                <h2>Alberto Cobián</h2>
-                <p className="specialist-title">Maestro Barbero & Fundador</p>
-              </div>
-              <div className="specialist-services">
-                {albertoServices.map((service, index) => (
-                  <div key={index} className="service-card">
-                    <h3>{service.name}</h3>
-                    {service.description && <p className="service-description">{service.description}</p>}
-                    {service.duration && <p className="service-duration">Duración: {service.duration}</p>}
-                    {service.price && <p className="service-price">Desde ${service.price}</p>}
-                    {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
-                    {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
-                    <Link to="/reservar?barber=alberto" className="service-book-button">
-                      Reserva con Alberto
-                    </Link>
-                  </div>
-                ))}
-              </div>
+          {/* ── Tabs de selección de especialista ── */}
+          <div className="specialist-tabs" role="tablist" aria-label="Seleccionar especialista">
+            {specialists.map(s => (
+              <button
+                key={s.key}
+                role="tab"
+                aria-selected={activeKey === s.key}
+                aria-controls={`panel-${s.key}`}
+                id={`tab-${s.key}`}
+                className={[
+                  'specialist-tab',
+                  activeKey === s.key ? 'specialist-tab--active' : '',
+                  s.featured ? 'specialist-tab--featured' : '',
+                ].join(' ')}
+                onClick={() => setActiveKey(s.key)}
+              >
+                {s.featured && <span className="tab-star" aria-hidden="true">✨ </span>}
+                {s.shortName}
+              </button>
+            ))}
+          </div>
+
+          {/* ── Panel del especialista activo ── */}
+          <div
+            className={`specialist-panel ${active.featured ? 'specialist-panel--featured' : ''}`}
+            role="tabpanel"
+            id={`panel-${active.key}`}
+            aria-labelledby={`tab-${active.key}`}
+          >
+            {/* Cabecera del especialista */}
+            <div className="specialist-panel-header">
+              <h2>{active.name}</h2>
+              <p className="specialist-title">{active.title}</p>
+              {active.featured && (
+                <span className="panel-badge">✨ Especialidad Única</span>
+              )}
             </div>
 
-
-
-            {/* Columna Alejandra */}
-            <div className="specialist-column alejandra-column">
-              <div className="specialist-header">
-                <h2>Alejandra Cárdenas</h2>
-                <p className="specialist-title">Especialista en Trenzas</p>
-              </div>
-              <div className="specialist-services">
-                {alejandraServices.map((service, index) => (
-                  <div key={index} className="service-card featured-service">
-                    <h3>{service.name}</h3>
-                    {service.description && <p className="service-description">{service.description}</p>}
-                    {service.duration && <p className="service-duration">Duración: {service.duration}</p>}
-                    {service.price && <p className="service-price">Desde ${service.price}</p>}
-                    {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
-                    {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
-                    <Link to="/reservar?barber=alejandra" className="service-book-button featured-button">
-                      Reserva con Alejandra
-                    </Link>
+            {/* Lista de servicios */}
+            <div className="specialist-services">
+              {active.services.map((service, index) => (
+                <div
+                  key={index}
+                  className={`service-card ${active.featured ? 'featured-service' : ''}`}
+                >
+                  {/* Fila superior: nombre + precio */}
+                  <div className="service-card__top">
+                    <h3 className="service-card__name">{service.name}</h3>
+                    {service.price && (
+                      <span className="service-price">Desde ${service.price}</span>
+                    )}
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Columna Exon */}
-            <div className="specialist-column">
-              <div className="specialist-header">
-                <h2>Exon</h2>
-                <p className="specialist-title">Barbero Profesional</p>
-              </div>
-              <div className="specialist-services">
-                {exonServices.map((service, index) => (
-                  <div key={index} className="service-card">
-                    <h3>{service.name}</h3>
-                    {service.description && <p className="service-description">{service.description}</p>}
-                    {service.duration && <p className="service-duration">Duración: {service.duration}</p>}
-                    {service.price && <p className="service-price">Desde ${service.price}</p>}
-                    {service.priceNotes && <p className="service-notes">{service.priceNotes}</p>}
-                    {service.includes && <p className="service-includes">Incluye: {service.includes}</p>}
-                    <Link to="/reservar?barber=exon" className="service-book-button">
-                      Reserva con Exon
-                    </Link>
-                  </div>
-                ))}
-              </div>
+                  {service.description && (
+                    <p className="service-description">{service.description}</p>
+                  )}
+                  {service.duration && (
+                    <p className="service-duration">⏱ {service.duration}</p>
+                  )}
+                  {service.includes && (
+                    <p className="service-includes">Incluye: {service.includes}</p>
+                  )}
+                  {service.priceNotes && (
+                    <p className="service-notes">{service.priceNotes}</p>
+                  )}
+
+                  <Link
+                    to={`/reservar?barber=${active.bookParam}`}
+                    className={`service-book-button ${active.featured ? 'featured-button' : ''}`}
+                  >
+                    Reservar con {active.shortName}
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
 
