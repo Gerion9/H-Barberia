@@ -15,7 +15,7 @@ export const teamMembers: BarberProfile[] = [
     id: "alberto",
     name: "Alberto Cobián",
     title: "Maestro Barbero & Fundador",
-    imageUrl: "/Cobian.png", // Asumiendo /public
+    imageUrl: "/Cobian.jpg", // Asumiendo /public
     description: "Con amplia experiencia y una visión artística, Alberto lidera H Barbería y guía a futuros talentos impartiendo nuestros cursos de barbería.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true"
   },

@@ -130,6 +130,9 @@ const galleryCategories: GalleryCategory[] = [
     description: 'Trabajos destacados y ambiente de nuestra barbería',
     driveUrl: '',
     images: [
+      { id: 'equipo-cobian-2', src: '/gallery/WhatsApp Image 2026-07-04 at 8.44.58 AM (4).jpeg', alt: 'Alberto Cobián aplicando tónico en un corte', category: 'galeria-local' },
+      { id: 'equipo-exon-2', src: '/gallery/WhatsApp Image 2026-07-04 at 8.44.58 AM (3).jpeg', alt: 'Exon perfilando una barba con navaja', category: 'galeria-local' },
+      { id: 'equipo-alejandra-2', src: '/gallery/WhatsApp Image 2026-07-04 at 8.44.59 AM.jpeg', alt: 'Alejandra estilizando el cabello de una clienta', category: 'galeria-local' },
       { id: 'local1', src: '/gallery/WhatsApp Image 2025-04-25 at 12.17.55_57568977.jpg', alt: 'Trabajo de barbería', category: 'galeria-local' },
       { id: 'local2', src: '/gallery/WhatsApp Image 2025-04-25 at 12.17.55_10262006.jpg', alt: 'Trabajo de barbería', category: 'galeria-local' },
       { id: 'local3', src: '/gallery/WhatsApp Image 2025-04-25 at 12.17.55_acef6357.jpg', alt: 'Trabajo de barbería', category: 'galeria-local' },
