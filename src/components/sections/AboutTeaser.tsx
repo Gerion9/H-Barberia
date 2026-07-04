@@ -6,7 +6,7 @@ import './AboutTeaser.css';
 // Solo usamos la ruta directamente
 
 const AboutTeaser: React.FC = () => {
-  const profileImageUrl = "/Cobian.png"; // Ruta a la imagen en /public
+  const profileImageUrl = "/Cobian.jpg"; // Ruta a la imagen en /public
 
   return (
     <section className="about-teaser-section">
