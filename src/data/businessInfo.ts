@@ -4,10 +4,6 @@ export const contactInfo = {
     name: "H Barberia (Alberto Cobian)",
     phone: "+52 1 312 231 6946",
   },
-  alejandra: {
-    name: "Alejandra Cárdenas",
-    instagram: "https://www.instagram.com/alessita.mua",
-  },
   exon: {
     name: "Exon",
     calendar: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Tt23N8Ni-ODwdWLl-ySK4TXMMR2MsChCvX44nhfVp5WzhUgItFMunJGCxZuK1CxJvwJfzX5z-?gv=true",

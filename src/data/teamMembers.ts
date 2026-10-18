@@ -19,15 +19,6 @@ export const teamMembers: BarberProfile[] = [
     description: "Con amplia experiencia y una visión artística, Alberto lidera H Barbería y guía a futuros talentos impartiendo nuestros cursos de barbería.",
     bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0My-O9cKoNbGgAARyGiumj-_vBR6OmfaZzks-3k1qdppEiZMguSyHKCIdb2NzpVU9PUxW5kWg1?gv=true"
   },
-
-  {
-    id: "alejandra",
-    name: "Alejandra Cárdenas",
-    title: "Especialista en Trenzas",
-    imageUrl: "/Alejandra.jpg",
-    description: "Experta en el arte del trenzado, Alejandra crea diseños únicos y elegantes que realzan la belleza natural de cada cliente.",
-    bookingUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1cf-Xbl_Z8Hev8CVTSN82C2sm50h1gWB_0HUFIugVz1wh3w4hpztHcrObsw0HJNtPe0dxVtdSk?gv=true"
-  },
   {
     id: "exon",
     name: "Exon",

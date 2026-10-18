@@ -62,16 +62,6 @@ const albertoServices: Service[] = [
   }
 ];
 
-const alejandraServices: Service[] = [
-  {
-    name: "Diseño de Trenzas",
-    price: 300,
-    duration: "180 minutos aprox",
-    description: "Creaciones únicas y elegantes que realzan tu belleza natural",
-    priceNotes: "Precio base. Puede variar según complejidad del diseño y largo del cabello."
-  }
-];
-
 const exonServices: Service[] = [
   { name: "Corte", price: 200, duration: "45 minutos aprox" },
   { name: "Arreglo de Barba", price: 200, duration: "45 minutos aprox" },
@@ -121,15 +111,6 @@ const specialists: Specialist[] = [
     bookParam: 'alberto',
     services: albertoServices,
     featured: false,
-  },
-  {
-    key: 'alejandra',
-    name: 'Alejandra Cárdenas',
-    shortName: 'Alejandra',
-    title: 'Especialista en Trenzas',
-    bookParam: 'alejandra',
-    services: alejandraServices,
-    featured: true,
   },
   {
     key: 'exon',
