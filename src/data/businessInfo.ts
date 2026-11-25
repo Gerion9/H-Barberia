@@ -12,10 +12,10 @@ export const contactInfo = {
 };
 
 export const businessHours = {
-  regular: {
-    days: "Lunes a Sábado",
-    hours: "3:00 PM - 8:00 PM",
-  },
+  regular: [
+    { days: "Lunes a Viernes", hours: "10:00 AM - 7:00 PM" },
+    { days: "Sábado", hours: "10:00 AM - 2:00 PM" },
+  ],
   courses: {
     days: "Lunes a Sábado", // Assuming courses run on the same days, adjust if needed
     hours: "10:00 AM - 1:00 PM",
@@ -23,11 +23,9 @@ export const businessHours = {
 };
 
 export const address = {
-  street: "C. Gabino Barreda 135",
-  neighborhood: "Centro",
-  postalCode: "28000",
+  street: "Higuera Marítima 1038",
   city: "Colima",
   state: "Col.",
-  fullAddress: "C. Gabino Barreda 135, Centro, 28000 Colima, Col.",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=C.+Gabino+Barreda+135%2C+Centro%2C+28000+Colima%2C+Col.", // Example URL
+  fullAddress: "Higuera Marítima 1038, Colima, Col.",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Higuera+Mar%C3%ADtima+1038%2C+Colima%2C+Col.",
 };

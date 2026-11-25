@@ -73,7 +73,12 @@ const ContactPage: React.FC = () => {
               <div className="info-item">
                 <span className="info-icon"><IconClock /></span>
                 <span>
-                  <strong>Horario Regular:</strong> {businessHours.regular.days}, {businessHours.regular.hours} <br />
+                  <strong>Horario Regular:</strong> <br />
+                  {businessHours.regular.map((slot) => (
+                    <React.Fragment key={slot.days}>
+                      {slot.days}, {slot.hours} <br />
+                    </React.Fragment>
+                  ))}
                   <strong>Cursos:</strong> {businessHours.courses.days}, {businessHours.courses.hours}
                 </span>
               </div>
