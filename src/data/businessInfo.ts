@@ -24,8 +24,8 @@ export const businessHours = {
 
 export const address = {
   street: "Higuera Marítima 1038",
-  city: "Colima",
+  city: "Villa de Álvarez",
   state: "Col.",
-  fullAddress: "Higuera Marítima 1038, Colima, Col.",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Higuera+Mar%C3%ADtima+1038%2C+Colima%2C+Col.",
+  fullAddress: "Higuera Marítima 1038, Villa de Álvarez, Col.",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Higuera+Mar%C3%ADtima+1038%2C+Villa+de+%C3%81lvarez%2C+Col.",
 };
